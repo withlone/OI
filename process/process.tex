@@ -1,0 +1,1970 @@
+\documentclass[a4paper]{article}
+\usepackage{ctex}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage{fancyvrb}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{makecell}
+\usepackage[colorlinks,urlcolor=cyan]{hyperref}
+\usepackage[affil-it]{authblk}
+\usepackage[top = 1.0in, bottom = 1.0in, left = 1.0in, right = 1.0in]{geometry}
+\usepackage{amsthm}
+\usepackage{listings}
+
+\setCJKfamilyfont{kai}{KaiTi_GB2312}
+\newcommand{\kai}{\CJKfamily{kai}}
+
+\setCJKfamilyfont{song}{SimSun}
+\newcommand{\song}{\CJKfamily{song}}
+
+\newcommand\spc{\vspace{6pt}}
+\newcommand{\floor}[1]{\lfloor {#1} \rfloor}
+\newcommand{\ceil}[1]{\lceil {#1} \rceil}
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{problem}{例题}
+
+\date{Today：\today}
+\title{Process}
+\author{{$\mathcal Lcy$}}
+
+\begin{document}
+	
+	\maketitle
+	
+	\song
+	
+	\begin{longtable}{|p{1.5cm}|p{2.5cm}|p{1.6cm}|p{1.6cm}|p{1cm}|p{3cm}|p{4cm}|}
+		
+		\hline
+		Date & Name & Source & FirstStatus & Status & Algorithm & Hint\\
+		
+		\hline
+		2017.6.25 & \href {https://www.luogu.org/problem/show?pid=1438}{无聊的数列}
+		 & 洛谷 & RE & AC & 线段树标记永久化 & 类型\\
+		
+		\hline
+		2017.6.25 & \href {https://www.luogu.org/problem/show?pid=1168}{中位数}
+		 & 洛谷 & RE & AC & zkw线段树 & 无\\
+		
+		\hline
+		2017.7.1 & \href {https://vjudge.net/problem/HDU-1542}{Atlantis}
+		 & HDU & WA & AC & 扫描线+线段树 & 扫描线的顺序以大小为关键字\\
+		
+		\hline
+		2017.7.1 & \href {https://vjudge.net/problem/HDU-1255}{覆盖的面积}
+		 & HDU & AC & AC & 扫描线+线段树 & 注意标记不一定都打在一个节点上\\
+		
+		\hline
+		2017.7.1 & \href {https://vjudge.net/problem/HDU-1828}{Picture}
+		 & HDU & WA & AC & 扫描线+线段树 & HDU的多组输入\\
+		
+		\hline
+		2017.7.1 & \href {http://codeforces.com/problemset/problem/718/C}{Sasha and Array}
+		 & codeforces & WA & AC & 矩阵+线段树 & 判断矩阵标记是否为空时要匹配每一个元素\\
+		
+		\hline
+		2017.7.1 & \href {http://codeforces.com/problemset/problem/413/E}{Maze 2D}
+		 & codeforces & WA & AC & 线段树 & 把每种情况考虑清楚\\
+		
+		\hline
+		2017.7.2 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3110}{K大数查询}
+		 & ZJOI2013 & RE & AC & 线段树套线段树+标记永久化 & 离散化\\
+		
+		\hline
+		2017.7.2 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2957}{楼房重建}
+		 & bzoj & AC & AC & 线段树 & 转化信息\\
+		
+		\hline
+		2017.7.2 & \href {https://vjudge.net/problem/HDU-5634}{Pikka with Phi}
+		 & HDU & RE & AC & 线段树 & $\phi(1) = 1$\\
+		
+		\hline
+		2017.7.3 & \href {http://uoj.ac/problem/228}{基础数据结构题}
+		 & uoj & AC & AC & 线段树 & 相差为1的两个数字开根可能相差为1\\
+		
+		\hline
+		2017.7.3 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=4869}{相逢是问候}
+		 & SHOI2017 & WA & AC & 线段树+欧拉定理 & update时sum要取模，++要慎用\\
+		
+		\hline
+		2017.7.4 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1901}{Dynamic Ranking}
+		 & bzoj & WA & AC & 带修改主席树 & 注意离散化后的数据\\
+		
+		\hline
+		2017.7.4 & \href {http://codeforces.com/problemset/problem/438/D}{The Child and Sequence}
+		 & codeforces & AC & AC & 线段树 & 不同操作分开打更好\\
+		
+		\hline
+		2017.7.4 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1146}{网络管理}
+		 & CTSC2008 & TLE & AC & 树上带修改主席树 & 开始建的主席树和后面修改的要分开\\
+		
+		
+		\hline
+		2017.7.5 & Segment
+		 & SEOI2013 & WA & AC & 线段树 & 过程变量大小，浮点数比较\\
+		 
+		\hline
+		2017.7.6 & \href {https://hihocoder.com/problemset/problem/1046}{K Seq}
+		 & Hihocoder & WA & AC & 线段树 & Inf要根据数据范围、空节点设置对应信息 \\
+		
+		\hline
+		2017.7.7 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1095}{Hide 捉迷藏}
+		 & ZJOI2007 & AC & AC & 线段树 & 注意括号序列中不同字符的信息的处理\\
+		
+		\hline
+		2017.7.7 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=4540}{序列}
+		 & HNOI2016 & WA & AC & 线段树 + 矩阵 + 单调栈 & 输入有负数 ， 输出是m个\\
+		
+		\hline
+		2017.7.7 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=4826}{影魔}
+		 & HNOI2017 & AC & AC & 线段树 + 单调栈 & 矩形的维护可以分别从两个轴维护 \\
+		
+		\hline
+		2017.7.8 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=4540}{序列}
+		 & HNOI2016 & WA & AC & 线段树 + 单调栈 + 扫描线 & 注意字串相同情况，开long long\\
+		
+		\hline
+		2017.7.8 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2212}{ROT-Tree Rotations}
+		 & POI2011 & WA & AC & 线段树合并 & 数组大小，节点回收利用\\
+		
+		\hline
+		2017.7.8 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=4719}{天天爱跑步}
+		 & NOIP2016 & WA & AC & 线段树合并 & 线段树合并的时候，Sz大小要先合并\\
+		
+		\hline
+		2017.7.9 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1576}{安全路径}
+		 & USACO & WA & AC & 线段树合并 & 权值线段树下表范围，记得删除非法的权值\\
+		
+		\hline
+		2017.7.10 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=4009}{接水果}
+		 & HNOI2015 & WA & AC & 线段树 & 灵活运用倍增，带修改主席树不用完全新建链，让所有矩形位于坐标的同一侧\\
+		
+		\hline
+		2017.7.10 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3207}{花神的嘲讽计划Ⅰ}
+		 & BZOJ & WA & AC & 可持久化线段树 & 注意输出的大小写\\
+		
+		\hline
+		2017.7.10 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3673}{可持久化并查集}
+		 & BZOJ & AC & AC & 可持久化线段树 & 维护可持久化数组\\
+		
+		\hline
+		2017.7.10 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3674}{可持久化并查集加强版}
+		 & BZOJ & TLE & AC & 可持久化线段树 & 按秩合并的方向，修改Dep直接改\\
+		
+		\hline
+		2017.7.11 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2653}{middle}
+		 & BZOJ & WA & AC & 可持久化线段树 & 空间放大点，此处离散化需要将相同元素区分\\
+		
+		\hline
+		2017.7.11 & \href {http://acm.hdu.edu.cn/showproblem.php?pid=4348}{To the moon}
+		 & HDU & MLE & AC & 可持久化线段树 & 注意空间限制，add要用int\\
+		
+		\hline
+		2017.7.11 & \href {http://acm.hdu.edu.cn/showproblem.php?pid=5919}{Sequence II}
+		 & HDU & AC & AC & 可持久化线段树 & 注意主席树节点什么时候是否可以共用\\
+		
+		\hline
+		2017.7.11 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2588}{Spoj 10628. Count on a tree}
+		 & SPOJ & RE & AC & 可持久化线段树 & 倍增记得预处理，不要打错字母\\
+		
+		\hline
+		2017.7.11 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2809}{dispatching}
+		 & APIO2012 & WA & AC & 可持久化线段树 & 熟悉Dfs序，叶子节点记得计算\\
+		
+		\hline
+		2017.7.12 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2809}{dispatching}
+		 & APIO2012 & RE & AC & 线段树合并 & 空间是$nlog_2n$，Del的时候信息要清空\\
+		
+		\hline
+		2017.7.12 & \href {http://codevs.cn/problem/4927/#}{线段树练习5}
+		 & codevs & WA & AC & 线段树 & set中有0，打代码认真别打错字母\\
+		
+		\hline
+		2017.7.12 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3878}{奇怪的计算器}
+		 & AHOI2014 & WA & AC & 线段树 & 特别注意区间极值的维护方式\\
+		
+		\hline
+		2017.7.12 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1858}{序列操作}
+		 & SCOI2010 & WA & AC & 线段树 & 标记分开打，注意标记之间的影响\\
+		
+		\hline
+		2017.7.13 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1513}{[POI2006]TET-Tetris 3D}
+		 & POI2006 & WA & AC & 线段树 & 注意标记永久化\\
+		
+		\hline
+		2017.7.13 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=4592}{脑洞治疗仪}
+		 & SHOI2015 & AC & AC & 线段树 & 注意语句的顺序\\
+		
+		\hline
+		2017.7.13 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3813}{奇数国}
+		 & BZOJ & WA & AC & 线段树+压位+数学 & 注意开long long\\
+		
+		\hline
+		2017.7.14 & \href {http://codeforces.com/problemset/problem/739/C}{Alyona and towers}
+		 & codeforces & WA & AC & 线段树 & 注意开long long\\
+		
+		\hline
+		2017.7.14 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3295}{动态逆序对}
+		 & CQOI2011 & RE & AC & 主席树 & 空间玄学\\
+		
+		\hline
+		2017.7.14 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3747}{Kinoman}
+		 & POI2015 & AC & AC & 线段树 & 考虑让修改具有区间性\\
+		
+		\hline
+		2017.7.14 & \href {https://vjudge.net/problem/UVA-12538}{Version Controlled IDE}
+		 & UVA & AC & AC & 可持久化treap & 无旋treap+版本改变时新建节点\\
+		
+		\hline
+		2017.7.15 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3289}{Mato的文件管理}
+		 & BZOJ & AC & AC & 莫队 + 树状数组 & 无\\
+		
+		\hline
+		2017.7.15 & test20170715 T1
+		 & 考试 & TLE & AC & DP & 考虑难以短时间求得的量转换成空间上的\\
+		
+		\hline
+		2017.7.15 & test20170715 T2
+		 & 考试 & AC & AC & 树上带修改主席树 & 原题\\
+		
+		\hline
+		2017.7.15 & test20170715 T3
+		 & 考试 & 0 & 0 & Fail树 & 不会\\
+		
+		\hline
+		2017.7.15 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2038}{小Z的袜子}
+		 & 2009国家集训队 & WA & AC & 莫队 & long long\\
+		
+		\hline
+		2017.7.16 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=4825}{单旋}
+		 & HNOI2017 & WA & AC & 线段树 & 题目分析清楚\\
+		
+		\hline
+		2017.7.16 & \href {https://www.luogu.org/problem/show?pid=2827}{蚯蚓}
+		 & NOIP2016 & WA & AC & 队列 & 看清数据范围\\
+		
+		\hline
+		2017.7.16 & \href {https://www.luogu.org/problem/show?pid=1563}{玩具迷题}
+		 & NOIP2016 & AC & AC & 模拟 & 无\\
+		
+		\hline
+		2017.7.17 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3757}{苹果树}
+		 & BZOJ & TLE & AC & 树上莫队 & 注意树上分块的细节\\
+		
+		\hline
+		2017.7.17 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2120}{数颜色}
+		 & BZOJ & WA & AC & 带修改莫队 & 不要打玄学压行\\
+		
+		\hline
+		2017.7.17 & \href {https://vjudge.net/problem/UVA-12345}{Dynamic len}
+		 & UVA & WA & AC & 带修改莫队 & 注意题目中区间表示的范围\\
+		
+		\hline
+		2017.7.17 & \href {http://uoj.ac/problem/58}{糖果公园}
+		 & WC2013 & WA & AC & 树上带修改莫队 & 注意函数性质\\
+		
+		\hline
+		2017.7.18 & \href {http://codeforces.com/problemset/problem/86/D}{Powerful array}
+		 & CF86D & TLE & AC & 莫队 & 注意常数因子\\
+		
+		\hline
+		2017.7.18 & \href {http://codeforces.com/problemset/problem/617/E}{XOR and Favorite Number}
+		 & CF617E & WA & AC & 莫队 & 先修改ans，再修改记录量，学会转化题目\\
+		
+		\hline
+		2017.7.19 & \href {https://vjudge.net/problem/HDU-5799}{This world need more Zhu}
+		 & HDU & WA & AC & 莫队 & 不要漏细节，Dfs序下的权值与原树权值不一样\\
+		
+		\hline
+		2017.7.19 & \href {https://vjudge.net/problem/HDU-5213}{Lucky}
+		 & HDU & AC & AC & 莫队 & 多个区间化成一个区间然后莫队\\
+		
+		\hline
+		2017.7.19 & \href {https://vjudge.net/problem/SPOJ-COT2}{Count on a tree II}
+		 & SPOJ & TLE & AC & 莫队 & 注意数组大小\\
+		
+		\hline
+		2017.7.20 & \href {https://vjudge.net/problem/SPOJ-COT}{Count on a tree}
+		 & SPOJ & AC & AC & 主席树 & 无\\
+		
+		\hline
+		2017.7.20 & \href {https://vjudge.net/problem/HDU-5381}{The sum of gcd}
+		 & HDU & AC & AC & 莫队 & 预处理使莫队可使用\\
+		
+		\hline
+		2017.7.20 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1086}{王室联邦}
+		 & SCOI2005 & AC & AC & 贪心 & 注意贪心的证明\\
+		
+		\hline
+		2017.7.20 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=4540}{序列}
+		 & HNOI2016 & WA & AC & 莫队 & 学会把问题转化成可以区间O(1)或O(log)转移的问题\\
+		
+		\hline
+		2017.7.21 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3110}{K大数查询}
+		 & ZJOI2013 & WA & AC & 整体二分 & 无\\
+		
+		\hline
+		2017.7.21 & \href {https://vjudge.net/problem/POJ-2104}{K-th Number}
+		 & POJ & WA & AC & 整体二分 & 注意unique的返回值\\
+		
+		\hline
+		2017.7.22 & \href {https://vjudge.net/problem/ZOJ-2112}{Dynamic Rankings}
+		 & ZOJ & WA & AC & 整体二分 & 初始序列也可以当做是一种操作\\
+		
+		\hline
+		2017.7.22 & \href {https://www.luogu.org/problem/show?pid=3810#sub}{三维偏序}
+		 & 洛谷 & TLE & AC & 树套树 & 数组大小\\
+		
+		\hline
+		2017.7.22 & \href {https://www.luogu.org/problem/show?pid=3810#sub}{三维偏序}
+		 & 洛谷 & WA & AC & CDQ分治 & 注意相同点的统计以及统计的时间\\
+		
+		\hline
+		2017.7.22 & \href {https://vjudge.net/problem/HDU-5618}{Jam's problem again}
+		 & HDU & OLE & AC & CDQ分治 & 注意一一对应的关系，注意用脑子看细节，不要靠直觉\\
+		
+		\hline
+		2017.7.23 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3236}{作业}
+		 & AHOI2013 & WA & AC & 莫队 & 空间大小！！！\\
+		
+		\hline
+		2017.7.23 & \href {https://vjudge.net/problem/ACdream-1157}{Segments}
+		 & ACdream & WA & AC & CDQ分治 & 坑爹！有多组输入\\
+		
+		\hline
+		2017.7.24 & \href {http://codeforces.com/problemset/problem/484/E}{Sign on Fence}
+		 & CF484E & WA & AC & 可持久化线段树 & 注意初始化\\
+		
+		\hline
+		2017.7.24 & \href {http://codeforces.com/problemset/problem/396/C}{On Changing Tree}
+		 & CF396C & WA & AC & 线段树 & 注意调用的是哪个变量\\
+		
+		\hline
+		2017.7.25 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2726}{任务安排}
+		 & SCOI2012 & WA & AC & 斜率优化 + CDQ分治 & 注意被转移的要求斜率单调，转移的要求参数单调\\
+		
+		\hline
+		2017.7.25 & \href {https://vjudge.net/problem/HDU-4742}{Pinball Game 3D}
+		 & HDU & WA & AC & CDQ分治 & 无\\
+		
+		\hline
+		2017.7.26 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2440}{完全平方数}
+		 & 中山市选2011 & AC & AC & 莫比乌斯函数 & 无\\
+		
+		\hline
+		2017.7.26 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2301}{Problem b}
+		 & HAOI2011 & WA & AC & 莫比乌斯反演 & 注意乘法是否爆int，整除的误差\\
+		
+		\hline
+		2017.7.26 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2820}{YY的GCD}
+		 & BZOJ & WA & AC & 莫比乌斯反演 & 注意int\\
+		
+		\hline
+		2017.7.27 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3529}{数表}
+		 & SDOI2014 & AC & AC & 莫比乌斯反演 & 注意结合了BIT之后的情况\\
+		
+		\hline
+		2017.7.27 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2818}{Gcd}
+		 & BZOJ & AC & AC & 莫比乌斯反演 & 无\\
+		
+		\hline
+		2017.7.27 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1101}{Zap}
+		 & POI2007 & WA & AC & 莫比乌斯反演 & 不要漏细节\\
+		
+		\hline
+		2017.7.27 & \href {https://vjudge.net/problem/SPOJ-LCMSUM}{LCM Sum}
+		 & SPOJ & AC & AC & 莫比乌斯反演 & 无\\
+		
+		\hline
+		2017.8.8 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2154}{Crash的数字表格}
+		 & BZOJ & WA & AC & 莫比乌斯反演 & 关于取模一定要留心\\
+		
+		\hline
+		2017.8.8 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2683}{简单题}
+		 & BZOJ & AC & AC & CDQ分治 & 学会讲问题转化成会做的问题\\
+		
+		\hline
+		2017.8.8 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1015}{[JSOI2008]星球大战starwar}
+		 & JSOI2008 & AC & AC & 并查集 & 学会逆向思考问题\\
+		
+		\hline
+		2017.8.8 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1116}{CLO}
+		 & POI2008 & WA & AC & 并查集 & 弄清楚并查集如何在路径压缩时更新信息\\
+		
+		\hline
+		2017.8.8 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3562}{神奇化合物}
+		 & SHOI2014 & AC & AC & 并查集 & 学会分析数据大小以及数据大小之间的关系\\
+		
+		\hline
+		2017.8.8 & \href {https://vjudge.net/problem/URAL-1003}{Parity}
+		 & URAL & WA & AC & 并查集 & 注意学会使用前缀和，注意与以前的不同\\
+		
+		\hline
+		2017.8.8 & \href {https://vijos.org/p/1221}{神秘配方}
+		 & vijos & RE & AC & 并查集 & 注意数组大小\\
+		
+		\hline
+		2017.8.9 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2054}{疯狂的馒头}
+		 & BZOJ & AC & AC & 并查集 & 学会将并查集像邻接链表一样使用\\
+		
+		\hline
+		2017.8.9 & \href {http://codevs.cn/problem/1299/}{切水果}
+		 & codevs & RE & AC & 并查集 & 注意并查集是否会爆栈\\
+		
+		\hline
+		2017.8.9 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1202}{狡猾的商人}
+		 & HNOI2005 & AC & AC & 并查集 & 无\\
+		
+		\hline
+		2017.8.9 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2303}{方格染色}
+		 & APIO2011 & WA & AC & 并查集 & 用并查集将集合合并后计算不同集合的个数时，用bool标记一遍比较保险，注意并查集合并的方向对结果造成的影响\\
+		
+		\hline
+		2017.8.9 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1854}{游戏}
+		 & SCOI2010 & WA & AC & 并查集 & 有想法后学会扩展，不要让想法走错一个方向就放弃，从想法的起源重来也是一种选择\\
+		
+		\hline
+		2017.8.10 & \href {https://www.luogu.org/problem/show?pid=3379#sub}{最近公共祖先模板}
+		 & 洛谷 & WA & AC & LCA\& RMQ & 无\\
+		
+		\hline
+		2017.8.10 & \href {https://vjudge.net/problem/POJ-3255}{Roadblocks}
+		 & POJ & RE & AC & 次短路问题（可重复走） & 注意入队元素可能不止n个\\
+		
+		\hline
+		2017.8.10 & \href {http://www.cogs.pro/cogs/problem/problem.php?pid=22}{路由选择问题}
+		 & HAOI2005 & AC & AC & 次短路问题 & 无\\
+		
+		\hline
+		2017.8.10 & \href {https://vjudge.net/problem/POJ-1679}{The Unique MST}
+		 & POJ & AC & AC & 次小生成树 & 无\\
+		
+		\hline
+		2017.8.10 & \href {https://vjudge.net/problem/URAL-1416}{Confidential}
+		 & URAL & AC & AC & 次小生成树 & memset的第三个参数不是int\\
+		
+		\hline
+		2017.8.10 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=4010}{菜肴制作}
+		 & HNOI2015 & WA & AC & 拓扑 & 想清楚再动手，学会逆向思维\\
+		
+		\hline
+		2017.8.11 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2730}{矿场搭建}
+		 & HNOI2012 & WA & AC & tarjan割点 & 把情况分析清楚\\
+		
+		\hline
+		2017.8.11 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1123}{BLO}
+		 & BZOJ & AC & AC & tarjan割点 & 无\\
+		
+		\hline
+		2017.8.11 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2438}{杀人游戏}
+		 & 中山市选2011 & WA & AC & tarjan缩点 & 这是有向边，不要惯性思维，注意一个点有多入度的情况，注意数组大小\\
+		
+		\hline
+		2017.8.11 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3391}{Tree Cutting网络破坏}
+		 & Usaco2004 Dec & WA & AC & dfs & 是否-1要考虑清楚\\
+		
+		\hline
+		2017.8.11 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1718}{Redundant Paths 分离的路径}
+		 & Usaco2006 Jan & WA & AC & tarjan缩点 & 注意两点之间可能多条边，想清楚，dfs的话注意特殊情况\\
+		
+		\hline
+		2017.8.11 & \href {https://vjudge.net/problem/HDU-3639}{Hawk-and-Chicken}
+		 & HDU & WA & AC & tarjan缩点 & 注意数据范围\\
+		
+		\hline
+		2017.8.12 & \href {https://www.vijos.org/p/1769}{网络的关键边}		
+		 & vijos & AC & AC & tarjan求桥 & 无\\
+		
+		\hline
+		2017.8.12 & \href {https://vjudge.net/problem/HDU-3836}{Equivalent Sets}
+		 & HDU & WA & AC & tarjan缩点 & 不知道考场上怎么才能得到正确的选择方式...\\
+		
+		\hline
+		2017.8.12 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1093}{最大半连通子图}
+		 & ZJOI2007 & WA & AC & tarjan缩点 & 注意重边，注意子图大小的细节\\
+		
+		\hline
+		2017.8.12 & \href {https://vjudge.net/problem/POJ-1236}{Network of Schools}
+		 & POJ & WA & AC & tarjan缩点 & 注意特殊情况\\
+		
+		\hline
+		2017.8.12 & \href {https://vjudge.net/problem/UVA-10731}{Test}
+		 & UVA & AC & AC & tarjan & 无\\
+		
+		\hline
+		2017.8.12 & \href {https://vjudge.net/problem/POJ-2186}{Popular Cows}
+		 & POJ & AC & AC & tarjan & 无\\
+		
+		\hline
+		2017.8.12 & \href {https://vjudge.net/problem/POJ-3592}{Instantaneous Transference}
+		 & POJ & RE & AC & tarjan & 注意某些隐藏的数据范围，不要过于节省空间（比如总是重复使用同一变量）\\
+		
+		\hline
+		2017.8.12 & \href {https://vjudge.net/problem/HDU-1269}{迷宫城堡}
+		 & HDU & AC & AC & tarjan & 无\\
+		
+		\hline
+		2017.8.13 & \href {https://vjudge.net/problem/UVA-10510}{Cactus}
+		 & UVA & AC & AC & tarjan & 无\\
+		
+		\hline
+		2017.8.13 & \href {https://vjudge.net/problem/UVA-11387}{The 3-Regular Graph}
+		 & UVA & AC & AC & 构造 & 无\\
+		
+		\hline
+		2017.8.13 & \href {https://vjudge.net/problem/UVA-11721}{Instant View of Big Bang}
+		 & UVA & WA & AC & Spfa判负环 & 注意tarjan不可以，队列开大点\\
+		
+		\hline
+		2017.8.13 & \href {https://vjudge.net/problem/POJ-1904}{King's Quest}
+		 & POJ & WA & AC & tarjan & 注意特殊情况\\
+		
+		\hline
+		2017.8.13 & \href {https://vjudge.net/problem/UVALive-5713}{Qin Shi Huang's National Road System}
+		 & UVA & WA & AC & MST & 不要打错了\\
+		
+		\hline
+		2017.8.13 & \href {https://vjudge.net/problem/UVA-1395}{Slim Span}
+		 & UVA & AC & AC & MST & 无\\
+		
+		\hline
+		2017.8.14 & \href {https://vjudge.net/problem/UVA-11183}{Teen Girl Squad}
+		 & UVA & WA & AC & 最小树形图，刘朱算法 & 无\\
+		
+		\hline
+		2017.8.14 & \href {https://vjudge.net/problem/UVA-1151}{Buy or Build}
+		 & UVA & WA & AC & MST & 注意边的记数\\
+		
+		\hline
+		2017.8.14 & \href{http://www.lydsy.com:808/JudgeOnline/problem.php?id=1601}{灌水}
+		 & Usaco2008 Oct & RE & AC & MST & 数组大小算清楚\\
+		
+		\hline
+		2017.8.14 & \href {https://vjudge.net/problem/UVA-10369}{Arctic Network}
+		 & UVA & RE & AC & MST & 搞清题意\\
+		
+		\hline
+		2017.8.14 & \href {https://www.luogu.org/problem/show?pid=3385}{【模板】负环}
+		 & 洛谷 & WA & AC & dfs spfa & 模板\\
+		
+		\hline
+		2017.8.14 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1821}{Group 部落划分 Group}
+		 & JSOI2010 & WA & AC & MST & 对于需要精确的数字要具体考虑清楚\\
+		
+		\hline
+		2017.8.14 & \href {https://vjudge.net/problem/UVA-11865}{Stream My Contest}
+		 & UVA & AC & AC & MST & 无\\
+		
+		\hline
+		2017.8.14 & \href {https://vjudge.net/problem/UVA-10600}{ACM Contest and Blackout}
+		 & UVA & AC & AC & MST & 无\\
+		
+		\hline
+		2017.8.14 & \href {https://vjudge.net/problem/UVA-10816}{Travel in Desert}
+		 & UVA & AC & AC & MST + 最短路 & 函数返回实数有精度误差\\
+		
+		\hline
+		2017.8.15 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1016}{最小生成树计数}
+		 & JSOI2008 & WA & AC & MST + 枚举 & 学会找性质，因为要还原所以不要路径压缩\\
+		
+		\hline
+		2017.8.15 & \href {https://cn.vjudge.net/problem/UVA-11354}{Bond}
+		 & UVA & WA & AC & MST + 倍增 & 用以前的知识时思路不要呆板，认识知识要清楚\\
+		
+		\hline
+		2017.8.15 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1626}{Building Roads 修建道路}
+		 & Usaco2007 Dec & AC & AC & MST & 无\\
+		
+		\hline
+		2017.8.15 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3479}{Watering the Fields}
+		 & Usaco2014 Mar & WA & AC & MST & 注意不连通的情况\\
+		
+		\hline
+		2017.8.15 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1604}{Cow Neighborhoods 奶牛的邻居}
+		 & Usaco2008 Open & RE & AC & 曼哈顿MST & 注意边要开4倍，sort之后下表与编号的关系\\
+		
+		\hline
+		2017.8.15 & \href {https://vjudge.net/problem/HDU-1579}{Function Run Fun}
+		 & HDU & AC & AC & 记忆化搜索 & 无\\
+		
+		\hline
+		2017.8.15 & \href {https://cn.vjudge.net/problem/UVA-247}{Calling Circles}
+		 & UVA & AC & AC & Floyd & 无\\
+		
+		\hline
+		2017.8.15 & \href {https://cn.vjudge.net/problem/HDU-1596}{find the safest road}
+		 & HDU & AC & AC & Floyd & 无\\
+		
+		\hline
+		2017.8.15 & \href {https://cn.vjudge.net/problem/POJ-3259}{Wormholes}
+		 & POJ & RE & AC & dfs spfa判负环 & 注意边的总数，注意dfs结束一个节点的时候相对于出队，vis=false\\
+		
+		\hline
+		2017.8.15 & \href {https://cn.vjudge.net/problem/POJ-3159}{Candies}
+		 & POJ & WA & AC & heap + dijkstra & 注意swap要加引用\\
+		
+		\hline
+		2017.8.15 & \href {https://vjudge.net/problem/HDU-1142}{A Walk Through the Forest}
+		 & HDU & AC & AC & heap + dijkstra & 无\\
+		
+		\hline
+		2017.8.15 & \href {https://vjudge.net/problem/UVA-10305}{Ordering Tasks}
+		 & UVA & AC & AC & 拓扑 & 无\\
+		
+		\hline
+		2017.8.15 & \href {https://vjudge.net/problem/HDU-1285}{确定比赛名次}
+		 & HDU & AC & AC & 拓扑 & 注意此题与菜肴制作的区别\\
+		
+		\hline
+		2017.8.15 & \href {https://vjudge.net/problem/HDU-4324}{Triangle LOVE}
+		 & HDU & AC & AC & 拓扑 & 对题目分析不够透彻\\
+		
+		\hline
+		2017.8.16 & \href {https://cn.vjudge.net/problem/POJ-2585}{Window Pains}
+		 & POJ & AC & AC & 拓扑 & 英文题就是伤...\\
+		
+		\hline
+		2017.8.16 & \href {https://cn.vjudge.net/problem/HDU-1811}{Rank of Tetris}
+		 & HDU & AC & AC & 拓扑 & 无\\
+		
+		\hline
+		2017.8.16 & \href {https://cn.vjudge.net/problem/POJ-3687}{Labeling Balls}
+		 & HDU & WA & AC & 拓扑 & 注意字典序和让较小编号尽量靠前的区别\\
+		
+		\hline
+		2017.8.16 & \href {https://cn.vjudge.net/problem/POJ-1094}{Sorting It All Out}
+		 & POJ & WA & AC & 拓扑 & 这题的要求真是无语，看不懂英文题总是漏条件\\
+		
+		\hline
+		2017.8.16 & \href {https://cn.vjudge.net/problem/POJ-2762}{Going from u to v or from v to u?}
+		 & POJ & WA & AC & 拓扑 & 弄清楚情况\\
+		
+		\hline
+		2017.8.16 & \href {https://cn.vjudge.net/problem/POJ-3249}{Test for Job}
+		 & POJ & WA & AC & 拓扑 & 注意有负数，要去max的要初始化为$-\infty$，而不是0\\
+		
+		\hline
+		2017.8.16 & \href {https://cn.vjudge.net/problem/POJ-2449}{Remmarguts' Date}
+		 & POJ & WA & AC & A* + 最短路 & 注意在函数里面开的数组可能会爆栈，如果非递归可以用static，相当于把内存分配到全局\\
+		
+		\hline
+		2017.8.16 & \href {https://vjudge.net/problem/POJ-1724}{ROADS}
+		 & POJ & AC & AC & A* + 最短路 & 无\\
+		
+		\hline
+		2017.8.17 & \href {https://vjudge.net/problem/POJ-1860}{Currency Exchange}
+		 & POJ & WA & AC & spfa & spfa的队列最好用O(n)的循环队列\\
+		
+		\hline
+		2017.8.17 & \href {https://vjudge.net/problem/HDU-2833}{WuKong}
+		 & POJ & TLE & AC & 记忆化搜索 + 最短路 & 学会运用搜索，注意重边的情况最好删掉不然会TLE\\
+		
+		\hline
+		2017.8.17 & \href {https://vjudge.net/problem/HDU-2433}{Travel}
+		 & POJ & TLE & AC & bfs + 优化 & 不要欺负数据小，注意static不要乱开\\
+		
+		\hline
+		2017.8.17 & \href {https://vjudge.net/problem/POJ-3660}{Cow Contest}
+		 & POJ & AC & AC & Floyd & 无\\
+		
+		\hline
+		2017.8.17 & \href {https://vjudge.net/problem/POJ-1716}{Integer Intervals}
+		 & POJ & WA & AC & spfa & 注意隐藏的限制，dijkstra不能跑含负权的图\\
+		
+		\hline
+		2017.8.17 & \href {https://vjudge.net/problem/POJ-1201}{Intervals}
+		 & POJ & AC & AC & spfa & 无\\
+		
+		\hline
+		2017.8.17 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1975}{魔法猪学院}
+		 & SDOI2010 & MLE & AC & spfa + A* & 此题卡空间，不能用dijkstra\\
+		
+		\hline
+		2017.8.18 & \href {https://loj.ac/problem/101}{最大流}
+		 & loj & 无 & AC & 网络流 & 无\\
+		
+		\hline
+		2017.8.18 & \href {https://loj.ac/problem/102}{最小费用流}
+		 & loj & 无 & AC & ZKW & 无\\
+		
+		\hline
+		2017.8.18 & \href {https://loj.ac/problem/6000}{「网络流 24 题」搭配飞行员}
+		 & 网络流24题 & AC & AC & 网络流 & 无\\
+		
+		\hline
+		2017.8.18 & \href {https://loj.ac/problem/6001}{「网络流 24 题」太空飞行计划}
+		 & 网络流24题 & WA & AC & 网络流 & 注意与超级源点相连通的点是选择的点，不能直接到达超级汇点的点不一定是未选择的点\\
+		
+		\hline
+		2017.8.19 & \href {https://loj.ac/problem/6002}{「网络流 24 题」最小路径覆盖}
+		 & 网络流24题 & AC & AC & 网络流 & 学会将DAG转化成二分图来做\\
+		
+		\hline
+		2017.8.19 & \href {https://loj.ac/problem/6003}{「网络流 24 题」魔术球}
+		 & 网络流24题 & AC & AC & 网络流 & 学会用以前的题目解决现在的问题\\
+		
+		\hline
+		2017.8.19 & \href {https://loj.ac/problem/6004}{「网络流 24 题」圆桌聚餐}
+		 & 网络流24题 & AC & AC & 网络流 & 无\\
+		
+		\hline
+		2017.8.19 & \href {https://loj.ac/problem/6005}{「网络流 24 题」最长递增子序列}
+		 & 网络流24题 & TLE & AC & 网络流 & 注意连边不要多连\\
+		
+		\hline
+		2017.8.19 & \href {https://loj.ac/problem/6006}{「网络流 24 题」试题库}
+		 & 网络流24题 & AC & AC & 网络流 & 无\\
+		
+		\hline
+		2017.8.19 & \href {https://loj.ac/problem/6007}{「网络流 24 题」方格取数}
+		 & 网络流24题 & AC & AC & 网络流 & 学会用二元组的方法，以及利用黑白点的方法（即不同划分不同含义）\\
+		
+		\hline
+		2017.8.20 & \href {https://loj.ac/problem/6008}{「网络流 24 题」餐巾计划}
+		 & 网络流24题 & TLE & AC & 费用流 & 利用二分图的方法结合费用流要求流量最大的限制，巧妙地使原本需要分流成两股相同流的问题解决\\
+		
+		\hline
+		2017.8.20 & \href {https://loj.ac/problem/6009}{「网络流 24 题」软件补丁}
+		 & 网络流24题 & WA & AC & 最短路 & 不要想到大的数据范围就不敢往下想了\\
+		
+		\hline
+		2017.8.20 & \href {https://loj.ac/problem/6010}{「网络流 24 题」数字梯形}
+		 & 网络流24题 & WA & AC & 费用流 & 注意规则2时底点和汇点之间的容量\\
+		
+		\hline
+		2017.8.20 & \href {https://loj.ac/problem/6011}{「网络流 24 题」运输问题}
+		 & 网络流24题 & AC & AC & 费用流 & 无\\
+		
+		\hline
+		2017.8.20 & \href {https://loj.ac/problem/6012}{「网络流 24 题」分配问题}
+		 & 网络流24题 & AC & AC & 费用流 & 无\\
+		
+		\hline
+		2017.8.20 & \href {https://loj.ac/problem/6013}{「网络流 24 题」负载平衡}
+		 & 网络流24题 & WA & AC & 费用流 & 注意连边，注意从i到i+2传递的情况是否能够表示\\
+		
+		\hline
+		2017.8.20 & \href {https://loj.ac/problem/6014}{「网络流 24 题」最长 k 可重区间集}
+		 & 网络流24题 & TLE & AC & 费用流 & 对于区间问题可以试着将区间端点串联起来，首尾各是源汇，然后对于一个区间信息可以将端点相连，限制源点的流量，这样就可以实现区间上的分流，即表示某些区间不同时选取\\
+		
+		\hline
+		2017.8.21 & \href {https://loj.ac/problem/6122}{「网络流 24 题」航空路线问题}
+		 & 网络流24题 & AC & AC & 费用流 & 学会方向思考问题\\
+		
+		\hline
+		2017.8.21 & \href {https://loj.ac/problem/6015}{「网络流 24 题」星际转移}
+		 & 网络流24题 & WA & AC & 网络流 & 学会对小数据暴力下手，利用判断可行性将问题转化成网络流问题，可以利用之前的增广降低时间复杂度\\
+
+		\hline
+		2017.8.21 & \href {https://loj.ac/problem/6121}{「网络流 24 题」孤岛营救问题}
+		 & 网络流24题 & TLE & AC & bfs & 用算法要分析好时间复杂度，胆大一点，注意bfs的优化\\
+		
+		\hline
+		2017.8.22 & \href {https://www.oj.swust.edu.cn/problem/show/1759}{「网络流 24 题」骑士共存问题}
+		 & 网络流24题 & AC & AC & 网络流 & 无\\
+		
+		\hline
+		2017.8.22 & \href {https://www.oj.swust.edu.cn/problem/show/1758}{「网络流 24 题」火星探险问题}
+		 & 网络流24题 & AC & AC & 费用流 & 无\\
+		
+		\hline
+		2017.8.22 & \href {https://www.oj.swust.edu.cn/problem/show/1755}{「网络流 24 题」深海机器人问题}
+		 & 网络流24题 & AC & AC & 费用流 & 无\\
+		
+		\hline
+		2017.8.23 & \href {https://www.oj.swust.edu.cn/problem/show/1750}{「网络流 24 题」汽车加油行驶问题}
+		 & 网络流24题 & WA & AC & 分层图 & 学会运用层次图\\
+		
+		\hline
+		2017.8.23 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3931}{网络吞吐量}
+		 & CQOI2015 & WA & AC & 网络流 & 注意边是重建边的时候边要一个一个判断，不能跳着判断\\
+		
+		\hline
+		2017.8.23 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2039}{employ人员雇佣}
+		 & 2009国家集训队 & AC & AC & 最小割 & 学会将最大转化成最小\\
+		
+		\hline
+		2017.8.23 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3438}{小M的作物}
+		 & BZOJ & AC & AC & 最小割 & 二元组还需深入\\
+		
+		\hline
+		2017.8.24 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3144}{切糕}
+		 & HNOI2013 & AC & AC & 最小割 & 学会利用最小割思路解题\\
+		
+		\hline
+		2017.8.24 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1143}{祭祀river}
+		 & CTSC2008 & WA & AC & 二分图 & 掌握二分图的性质\\
+		
+		\hline
+		2017.8.24 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1565}{植物大战僵尸}
+		 & NOI2009 & WA & AC & 最小割 & 注意指向环的也不可以\\
+		
+		\hline
+		2017.8. & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3130}{费用流}
+		 & SDOI2013 & AC & AC & 网络流 & 学会选择适当的顺序思考（如果先从Alice思考就麻烦了）\\
+		
+		\hline
+		2017.8.24 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3511}{土地划分}
+		 & BZOJ & AC & AC & 最小割 & 学会用inf边使得某些点的归属确定\\
+		
+		\hline
+		2017.8.24 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1070}{修车}
+		 & SCOI2007 & WA & AC & 费用流 & 学会逆向思考贡献\\
+		
+		\hline
+		2017.8.24 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2879}{美食节}
+		 & NOI2012 & TLE & AC & 费用流 & 注意优化边的数量\\
+		
+		\hline
+		2017.8.25 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1061}{志愿者招募}
+		 & NOI2008 & TLE & AC & 费用流 & 学会构造流量平衡的等式\\
+		
+		\hline
+		2017.8.25 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1001}{狼抓兔子}
+		 & BeiJing2006 & AC & AC & 最小割 & 无\\
+		
+		\hline
+		2017.8.25 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1412}{狼和羊的故事}
+		 & ZJOI2009 & RE & AC & 最小割 & 记得考虑极端情况下的空间\\
+		
+		\hline
+		2017.8.25 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1497}{最大获利}
+		 & NOI2006 & AC & AC & 最小割 & 学会运用最大权闭合子图\\
+		
+		\hline
+		2017.8.25 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2400}{Spoj 839 Optimal Marks}
+		 & SPOJ & WA & AC & 最小割 & 对于位运算学会考虑其本质\\
+		
+		\hline
+		2017.8.26 & \href {https://vjudge.net/problem/ZOJ-2676}{Network Wars}
+		 & ZOJ & WA & AC & 分数规划 & 注意边是无向的\\
+		
+		\hline
+		2017.8.26 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3894}{文理分科}
+		 & BZOJ & AC & AC & 最小割 & 无\\
+		
+		\hline
+		2017.8.26 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2127}{happiness}
+		 & BZOJ & WA & AC & 最小割 & 无\\
+		
+		\hline
+		2017.8.28 & switch
+		 & 考试 & AC & AC & 最短路 & 吐槽数据\\
+		
+		\hline
+		2017.8.28 & langle
+		 & 考试 & WA & AC & 分层图 & 注意作为加入队列的暂时变量不要保留上一次的信息，以免发生错误，不要害怕开1e8数组，根据实际情况来\\
+		
+		\hline
+		2017.8.28 & wish
+		 & 考试 & AC & AC & DP + 线段树 & 还可以想到更简单的方法，直接用拓扑$O(n)$\\
+		
+		\hline
+		2017.8.28 & campaign
+		 & 考试 & WA & AC & 枚举 & 学会做枚举题，找到隐藏的限制来枚举\\
+		
+		\hline
+		2017.8.28 & \href {https://www.loj.ac/problem/115}{无源汇有上下界可行流}
+		 & 模板 & AC & AC & 网络流 & 模板\\
+		
+		\hline
+		2017.8.28 & \href {https://www.loj.ac/problem/116}{有源汇有上下界最大流}
+		 & 模板 & AC & AC & 网络流 & 模板\\
+		
+		\hline
+		2017.8.28 & \href {https://www.loj.ac/problem/117}{有源汇有上下界最小流}
+		 & 模板 & AC & AC & 网络流 & 模板\\
+		
+		\hline
+		2017.8.29 & ska
+		 & 考试 & 0 & AC & 结论 & 学会通过表达式观察性质\\
+		
+		\hline
+		2017.8.29 & tet
+		 & 考试 & 0 & AC & 构造 & 学会构造一种方法并且尝试大概验证正确性\\
+		
+		\hline
+		2017.8.29 & klo
+		 & 考试 & 0 & AC & DP & 思考深入一点，条件的转化灵活一点\\
+		
+		\hline
+		2017.8.29 & gaz
+		 & 考试 & WA & AC & 结论 & 无\\
+		
+		\hline
+		2017.8.29 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3504}{危桥}
+		 & CQOI2014 & AC & AC & 网络流 & 无\\
+		
+		\hline
+		2017.8.29 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1930}{pacman 吃豆豆}
+		 & SHOI2003 & TLE & AC & 费用流 & 注意空间限制优化连边\\
+		
+		\hline
+		2017.8.29 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1266}{上学路线route}
+		 & AHOI2006 & WA & AC & 最短路 + 最小割 & 注意连边的方向\\
+		
+		\hline
+		2017.8.30 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1305}{dance跳舞}
+		 & CQOI2009 & AC & AC & 网络流 & 学会更深地理解题目的限制含义\\
+		
+		\hline
+		2017.8.30 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1433}{假期的宿舍}
+		 & ZJOI2009 & WA & AC & 网络流 & 注意在校学生才有床位\\
+		
+		\hline
+		2017.8.30 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1570}{Blue Mary的旅行}
+		 & JSOI2008 & WA & AC & 分层图 + 网络流 & 注意数组的大小\\
+		
+		\hline
+		2017.8.30 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1797}{Mincut 最小割}
+		 & AHOI2009 & TLE & AC & 最小割的割边的相关性质 & 最多一共有N-1个不同的s-t最小割\\
+		
+		\hline
+		2017.8.30 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1877}{晨跑}
+		 & SDOI2009 & AC & AC & 费用流 & 无\\
+		
+		\hline
+		2017.8.30 & control
+		 & 考试 & AC & AC & 贪心 & 不要做做出来的题目上面花太多没有用的时间\\
+		
+		\hline
+		2017.8.30 & permu
+		 & 考试 & 0 & AC & DP & 学会抓住DP性质，将原本需要$O(n)$转移的变成较小转移或者$O(1)$转移\\
+		
+		\hline
+		2017.8.30 & pilhrims
+		 & 考试 & 0 &  & 树型DP & 困难\\
+		
+		\hline
+		2017.8.31 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1927}{星际竞速}
+		 & SDOI2010 & AC & AC & 费用流 & 记得运用二分图\\
+		
+		\hline
+		2017.8.31 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1934}{Vote 善意的投票 }
+		 & SHOI2007 & AC & AC & 网络流 & 无\\
+		
+		\hline
+		2017.8.31 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2132}{圈地计划}
+		 & BZOJ & AC & AC & 网络流 & 无\\
+		
+		\hline
+		2017.8.31 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2229}{最小割}
+		 & ZJOI2011 & AC & AC & 最小割 + 分治 & 关于最小割的性质\\
+		
+		\hline
+		2017.8.31 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2285}{保密}
+		 & SDOI2011 & WA & AC & 分数规划 + 网络流 & 学会运用分数规划\\
+		
+		\hline
+		2017.8.31 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2424}{订货}
+		 & HAOI2010 & AC & AC & 网络流 & 无\\
+		
+		\hline
+		2017.9.1 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2561}{最小生成树}
+		 & BZOJ & WA & AC & 最小割 & 学会模拟某些算法的过程，注意最小生成树中边权相等的情况\\
+		
+		\hline
+		2017.9.1 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1324}{Exca王者之剑}
+		 & BZOJ & AC & AC & 最小割 & 无\\
+		
+		\hline
+		2017.9.1 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2668}{交换棋子}
+		 & CQOI2012 & WA & AC & 网络流 & 注意细节，不要弄错了\\
+		
+		\hline
+		2017.9.1 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2597}{剪刀石头布}
+		 & WC2007 & WA & AC & 费用流 & 学会用多条连接相同端点但费用不同的边，记得补集思想，算清队列大小，不要漏了一个0\\
+		
+		\hline
+		2017.9.1 & clo
+		 & 考试 & WA & AC & 结论题 & 数组开小了\\
+		
+		\hline
+		2017.9.1 & egz
+		 & 考试 & 0 & AC & 转化成LIS相关 & 学会转化题目\\
+		
+		\hline
+		2017.9.1 & wag
+		 & 考试 & 0 & AC & 数位DP & 学会对于“进制”题目用数位DP\\
+		
+		\hline
+		2017.9.1 & wag
+		 & 考试 & 0 & AC & 贪心 & 贪心只能多练\\
+		
+		\hline
+		2017.9.3 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2756}{奇怪的游戏}
+		 & SCOI2012 & WA & AC & 网络流 & 学会列式，学会将点上的限制化成容量费用\\
+		
+		\hline
+		2017.9.3 & math
+		 & 考试 & 0 & AC & 数学 & 欧几里得求通解，预处理变成每10个处理卡空间\\
+		
+		\hline
+		2017.9.3 & walk
+		 & 考试 & 0 & AC & DP & 滚动数组\\
+		
+		\hline
+		2017.9.3 & string
+		 & 考试 & 0 & & & 枚举\\
+		
+		\hline
+		2017.9.4 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3112}{防守战线}
+		 & ZJOI2013 & AC & AC & 网络流 & 对偶\\
+		
+		\hline
+		2017.9.5 & customer
+		 & 考试 & AC & AC & DP & 仔细想想是可以直接贪心的\\
+		
+		\hline
+		2017.9.5 & prz
+		 & 考试 & 0 & AC & 模拟 & 注意夹在区间之间但不需要覆盖的区间\\
+		
+		\hline
+		2017.9.5 & int
+		 & 考试 & AC & AC & 链表 + BIT & 无\\
+		
+		\hline
+		2017.9.5 & partition
+		 & 考试 & AC & AC & 贪心 & 和kruskal一样的\\
+		
+		\hline
+		2017.9.5 & ticket
+		 & 考试 & 0 & AC & 卡特兰函数 & 学会运用一一对应\\
+		
+		\hline
+		2017.9.5 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3158}{千钧一发}
+		 & BZOJ & WA & AC & 最小割 & 学会根据题目限制将不同性质的两组分开，变成二分图，例如利用奇数与偶数这一组\\
+		
+		\hline
+		2017.9.5 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3171}{循环格}
+		 & TJOI2013 & WA & AC & 费用流 & 把问题分析清楚\\
+		
+		\hline
+		2017.9.6 & bit
+		 & 考试 & AC & AC & 预处理 & 无\\
+		
+		\hline
+		2017.9.6 & remove
+		 & 考试 & AC & AC & 线段树 & 无\\
+		
+		\hline
+		2017.9.6 & master
+		 & 考试 & 0 & AC & 二分 & 注意精度，注意有些可以不要用\\
+		
+		\hline
+		2017.9.6 & gap
+		 & 考试 & 0 &  & 后缀数组 & \\
+		
+		\hline
+		2017.9.6 & wash
+		 & 考试 & 0 & 0 & 贪心 & 无\\
+		
+		\hline
+		2017.9.6 & process
+		 & 考试 & AC & AC & 贪心 & 无\\
+		
+		\hline
+		2017.9.6 & \href {http://www.lydsy.com/JudgeOnline/status.php?user_id=lcy}{a + b Problem}
+		 & BZOJ & RE & AC & 主席树优化网络流连边 & 想清楚再动手\\
+		
+		\hline
+		2017.9.6 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3993}{星际战争}
+		 & SDOI2015 & WA & AC & 网络流 & 学会将基础算法与现学算法相结合\\
+		
+		\hline
+		2017.9.6 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3996}{线性代数}
+		 & TJOI2015 & AC & AC & 最小割 & 无\\
+		
+		\hline
+		2017.9.6 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=4443}{小凸玩矩阵}
+		 & SCOI2015 & AC & AC & 网络流 & 对于求K大这种比较玄学又要用网络流的可以用二分考虑\\
+		
+		\hline
+		2017.9.6 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=4519}{不同的最小割}
+		 & CQOI2016 & AC & AC & 最小割的割边的相关性质 & 牢记性质（分治做法）\\
+		
+		\hline
+		2017.9.6 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=4819}{新生舞会}
+		 & SDOI2017 & AC & AC & 分数规划 & 无\\
+		
+		\hline
+		2017.9.7 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=4514}{数字配对}
+		 & SDOI2016 & WA & AC & 网络流 & 学会强行往二分图上思考，注意小细节\\
+		
+		\hline
+		2017.9.7 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=4873}{寿司餐厅}
+		 & SHOI2017 & RE & AC & 最小割 & 对于存在递归式的依赖连边关系可以优化，比如对于每一个[l,r]要向其所有子区间连边，可以转化成[l,r]向[l+1,r]和[l,r-1]连边\\
+		
+		\hline
+		2017.9.7 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2179}{FFT快速傅立叶}
+		 & BZOJ & RE & AC & FFT & 注意数组的大小问题\\
+		
+		\hline
+		2017.9.7 & \href {https://loj.ac/problem/108}{多项式乘法}
+		 & 模板 & AC & AC & FFT & 模板\\
+		
+		\hline
+		2017.9.8 & \href {https://loj.ac/problem/108}{多项式乘法}
+		 & 模板 & AC & AC & NTT & 模板\\
+		
+		\hline
+		2017.9.8 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2194}{快速傅立叶之二}
+		 & BZOJ & AC & AC & FFT & 注意FFT与卷积的关系\\
+		
+		\hline
+		2017.9.8 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3527}{力}
+		 & ZJOI2014 & WA & AC & FFT & 注意i*i会爆int\\
+		
+		\hline
+		2017.9.8 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3771}{Triple}
+		 & BZOJ & AC & AC & FFT & 学会用多项式代表具体意义\\
+		
+		\hline
+		2017.9.9 & xor
+		 & 考试 & 0 & AC & 杨辉三角+Lucas+枚举子集 & 学会考虑每一个点对答案的贡献\\
+		
+		\hline
+		2017.9.9 & totient
+		 & 考试 & 0 & AC & 组合 + 积性函数 & 学会探索一个给定函数的性质，比如说是否为积性函数，学会考虑过程对答案的影响\\
+		
+		\hline
+		2017.9.9 & array
+		 & 考试 & 0 & AC & 素数测试 + 积性函数 + 矩阵 & 学会在不确定中去强行DP\\
+		
+		\hline
+		2017.9.10 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=4503}{两个串}
+		 & BZOJ & RE & AC & FFT & 注意得到的多项式的每一项对应的具体意义\\
+		
+		\hline
+		2017.9.10 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=4259}{残缺的字符串}
+		 & BZOJ & WA & AC & FFT & 注意数组大小\\
+		
+		\hline
+		2017.9.11 & conncet
+		 & 考试 & AC & AC & kruskal & 无\\
+		
+		\hline
+		2017.9.11 & godwall
+		 & 考试 & AC & AC & tarjan缩点 & 无\\
+		
+		\hline
+		2017.9.11 & strike
+		 & 考试 & 0 & AC & bfs + 二分 & 无\\
+		
+		\hline
+		2017.9.11 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=4555}{求和}
+		 & TJOI2016 & WA & AC & FFT & 记清楚快速卷积的形式，位运算的优先级\\
+		
+		\hline
+		2017.9.11 & a
+		 & 自测 & AC & AC & Lucas & 无\\
+		
+		\hline
+		2017.9.11 & b
+		 & 自测 & AC & AC & map & 把一个树的所有size提取出来，升续排列，然后作为哈希值\\
+		
+		\hline
+		2017.9.11 & c
+		 & 自测 & AC & AC & 线段树 & 对于每一个数字维护一个线段树，要卡一卡常数\\
+		
+		\hline
+		2017.9.12 & atm
+		 & 考试 & 87 & AC & tarjan + 拓扑DP & 注意要让所有入度为0的点入队，否则有些点的入度无法清空为0\\
+		
+		\hline
+		2017.9.12 & beads
+		 & 考试 & 100 & AC & 哈希 & 字符串哈希暴力判断\\
+		
+		\hline
+		2017.9.12 & clever
+		 & 考试 & 40 & AC & 最短路 & 注意下落的是时间，走路的是路程，看清楚题目\\
+		
+		\hline
+		2017.9.12 & park
+		 & 考试 & 9 & AC & 状压DP & 要有往状压DP方向想，学会挖掘性质\\
+		
+		\hline
+		2017.9.12 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=4827}{礼物}
+		 & HNOI2017 & RE & AC & NTT & 要熟练掌握多项式得到的结果\\
+		
+		\hline
+		2017.9.12 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=3992}{序列统计}
+		 & SDOI2015 & WA & AC & NTT & 注意卷积形式的要求：$F_j = \sum_{i=0}^nf_x*g_y$其中n中含有j，$x+y=n$\\
+		
+		\hline
+		2017.9.13 & \href {https://loj.ac/problem/6156}{A * B Problem}
+		 & loj & RE & AC & FFT & 选集合中的数字，当一共选的个数很小的时候可以用多项式相乘表达选取，注意要用容斥减掉选自己（题目有特别要求除外）\\
+		
+		\hline
+		2017.9.13 & \href {https://loj.ac/problem/6228}{mystery}
+		 & loj & WA & AC & FFT & 补集思想有时更加方便\\
+		
+		\hline
+		2017.9.13 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=2693}{jzptab}
+		 & BZOJ & WA & AC & 莫比乌斯反演 & 会爆long long的取模运算最好分步进行\\
+		
+		\hline
+		2017.9.13 & \href {https://loj.ac/problem/528}{求和}
+		 & loj & TLE & AC & 莫比乌斯反演 & 注意普通的牛顿迭代求sqrt没有系统快\\
+		
+		\hline
+		2017.9.14 & lca
+		 & 考试 & 0 & WA & 分块 & 卡空间0.0\\
+		
+		\hline
+		2017.9.14 & foo
+		 & 考试 & 0 & AC & 线段树合并/树链剖分 & 学会用时间作为线段树权值，学会合并相互冲突的标记\\
+		
+		\hline
+		2017.9.14 & walk
+		 & 考试 & 0 & AC & dp & 学会利用钱不会被扣成负数的性质\\
+		
+		\hline
+		2017.9.15 & mag
+		 & 考试 & 0 & AC & IDA* & 学会找到方便的枚举项\\
+		
+		\hline
+		2017.9.15 & wormhole
+		 & 考试 & 100 & AC & 最短路 + 状态压缩 & 实现有点麻烦\\
+
+		\hline
+		2017.9.15 & cir
+		 & 考试 & 100 & AC & 最短路 & 实际上bfs即可\\
+		
+		\hline
+		2017.9.15 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1003}{物流运输}
+		 & ZJOI2006 & AC & AC & 最短路 + DP & 数据小的时候考虑用点暴力的做法\\
+		
+		\hline
+		2017.9.16 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1005}{明明的烦恼}
+		 & HNOI2008 & AC & AC & puffer编码 & 性质：puffer编码与无根树一一对应\\
+		
+		\hline
+		2017.9.16 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1006}{神奇的国度}
+		 & HNOI2008 & WA & AC & 最大势算法 & 无\\
+		
+		\hline
+		2017.9.16 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1011}{遥远的行星}
+		 & HNOI2008 & WA & AC & 卡精度 & 注意精度是可以卡的\\
+		
+		\hline
+		2017.9.17 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1017}{魔兽地图DotR}
+		 & JSOI2008 & WA & AC & 树型DP & DP有时需要枚举不在状态表达中的项\\
+		
+		\hline
+		2017.9.17 & \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1018}{堵塞的交通traffic}
+		 & SHOI2008 & WA & AC & 线段树 & 注意可以往左走再往右走的情况\\
+		
+		\hline
+		2017.9.18 & count
+		 & 考试 & 45 & AC & 一一对应 + dp & 学会运用一一对应\\
+		
+		\hline
+		2017.9.18 & delete
+		 & 考试 & 0 & AC & 贪心 & 贪心大胆尝试\\
+		
+		\hline
+		2017.9.18 & floor
+		 & 考试 & 100 & AC & 递推 & 无\\
+		
+		\hline
+		2017.9.18 & \href {https://www.luogu.org/problem/show?pid=T2}{预生成密码}
+		 & 洛谷月赛 & AC & AC & 二进制 & 多注意二进制的性质\\
+		
+		\hline
+		2017.9.18 & \href {https://www.luogu.org/problem/show?pid=3924#sub}{康娜的线段树}
+		 & 洛谷月赛 & TLE & AC & 期望 & 考虑每个操作的贡献\\
+
+		\hline
+		2017.9.18 & \href {https://www.luogu.org/problem/show?pid=3925}{aaa被续}
+		 & 洛谷月赛 & WA & AC & 线段树合并 & 要想清楚\\
+		
+		\hline
+		2017.9.19 & coin
+		 & 考试 & 30 & AC & 概率DP & 需要练习\\
+		
+		\hline
+		2017.9.19 & triangle
+		 & 考试 & 0 & AC & 哈希 + 枚举 + 补集思想 & 补集思想与一一对应都不要漏，学会用可以解决冲突的哈希表\\
+		
+		\hline
+		2017.9.19 & aqnum
+		 & 考试 & 60 & AC & 搜索 + 剪枝 & 如果想到搜索也要想到剪枝\\
+		
+		\hline
+		2017.9.20 & \href {https://vjudge.net/problem/POJ-3744}{Scout YYF I}
+		 & POJ & TLE & AC & 概率DP & 无\\
+		
+		\hline
+		2017.9.20 & \href {https://vjudge.net/problem/POJ-2096}{Collecting Bugs}
+		 & POJ & AC & AC & 概率DP & 概率正推，期望逆推\\
+		
+		\hline
+		2017.9.20 & \href {https://vjudge.net/problem/ZOJ-3329}{One Person Game}
+		 & ZOJ & AC & AC & 概率DP & 学会将dp方程化成新的形式，再将新的形式变换\\
+		
+		\hline
+		2017.9.21 & sum
+		 & 考试 & 80 & AC & 数学 & 注意考虑积性函数\\
+		
+		\hline
+		2017.9.21 & light
+		 & 考试 & 10 & AC & 二分 & 注意细节\\
+		
+		\hline
+		2017.9.21 & sequence
+		 & 考试 & 30 & AC & dp & 不要认为得到两个结果的DP不可以，思考清楚确定是否不能DP\\
+		
+		\hline
+		2017.9.21 & \href {https://vjudge.net/problem/HDU-4405}{Aeroplane chess}
+		 & HDU & AC & AC & 概率DP & 无\\
+		
+		\hline
+		2017.9.21 & \href {https://vjudge.net/problem/HDU-4089}{Activation}
+		 & HDU & AC & AC & 概率DP & 自己要多想一下\\
+
+		\hline
+		2017.9.22 & overflow
+		 & 考试 & 100 & AC & 模拟 & 无\\
+		
+		\hline
+		2017.9.22 & func
+		 & 考试 & 100 & AC & bfs & 无\\
+		
+		\hline
+		2017.9.22 & jumpcut
+		 & 考试 & 20 & AC & 枚举 & 无\\
+		
+		\hline
+		2017.9.22 & \href {https://www.luogu.org/problem/show?pid=2678#sub}{跳石头}
+		 & noip2015 & AC & AC & 二分答案 & 无\\
+		
+		\hline
+		2017.9.22 & \href {https://www.luogu.org/problem/show?pid=1023#sub}{税收与补贴问题}
+		 & noip2000 & WA & AC & 解不等式 & 学会根据条件列式\\
+		
+		\hline
+		2017.9.22 & \href {https://www.luogu.org/problem/show?pid=1026#sub}{统计单词个数}
+		 & noip2001 & WA & AC & 暴力 & 无\\
+		
+		\hline
+		2017.9.22 & \href {https://www.luogu.org/problem/show?pid=1965#sub}{转圈游戏}
+		 & noip2013 & AC & AC & 模拟 & 无\\
+		
+		\hline
+		2017.9.23 & \href {https://www.luogu.org/problem/show?pid=2296#sub}{寻找道路}
+		 & noip2014 & WA & AC & bfs & 注意细节\\
+		
+		\hline
+		2017.9.23 & \href {https://www.luogu.org/problem/show?pid=1016#sub}{旅行家的预算}
+		 & noip1999 & AC & AC & 贪心 & 无\\
+		
+		\hline
+		2017.9.23 & \href {https://www.luogu.org/problem/show?pid=1027#sub}{Car的旅行计划}
+		 & noip2001 & WA & AC & 最短路 & 注意已知矩形三点求四点的问题\\
+		
+		\hline
+		2017.9.23 & \href {https://www.luogu.org/problem/show?pid=1328#sub}{生活大爆炸版石头剪刀布}
+		 & noip2014 & AC & AC & 模拟 & 无\\
+		
+		\hline
+		2017.9.25 & \href {https://www.luogu.org/problem/show?pid=1970#sub}{花匠}
+		 & noip2013 & AC & AC & DP & 无\\
+
+		\hline
+		2017.9.25 & \href {https://www.luogu.org/problem/show?pid=1850#sub}{换教室}
+		 & noip2016 & WA & AC & 期望DP & 注意不要让同一个事件存在发生与不发生的两种可能\\
+		
+		\hline
+		2017.9.25 & \href {https://www.luogu.org/problem/show?pid=1941#sub}{飞扬的小鸟}
+		 & noip2014 & WA & AC & DP & 注意细节\\
+		
+		\hline
+		2017.9.25 & \href {https://www.luogu.org/problem/show?pid=2038#sub}{无线网络发射器选址}
+		 & noip2014 & WA & AC & 枚举 & 注意中心点要求在范围内\\
+		
+		\hline
+		2017.9.25 & sort
+		 & 考试 & 100 & AC & 结论 & 无\\
+		
+		\hline
+		2017.9.25 & graph
+		 & 考试 & 70 & AC & 构造 & 学会使用反图\\
+		
+		\hline
+		2017.9.25 & or
+		 & 考试 & 30 & AC & 压位DP & 学会表示前i位是否和n匹配的情况\\
+		
+		\hline
+		2017.9.26 & gene
+		 & 考试 & 100 & AC & kmp或哈希二分 & 无\\
+		
+		\hline
+		2017.9.26 & shield
+		 & 考试 & 0 & AC & 坐标转化 + LIS & 学会将坐标转化，将一些问题转化成LIS\\
+		
+		\hline
+		2017.9.26 & chronosphere
+		 & 考试 & 30 & AC & 拓扑 + 堆 + 枚举 & 学会考虑单独的贡献\\
+		
+		\hline
+		2017.9.27 & guard
+		 & 考试 & 70 & AC & 贪心 & 细心\\
+		
+		\hline
+		2017.9.27 & phase
+		 & 考试 & 100 & AC & 树链剖分 或 线段树代替树链剖分 & 学会奇偶分层\\
+		
+		\hline
+		2017.9.27 & refuse
+		 & 考试 & 0 & AC & 恒等变形 + 背包DP & 学会列式并变形\\
+
+		\hline
+		2017.9.28 & \href {https://www.luogu.org/problem/show?pid=1311#sub}{选择客栈}
+		 & noip2011 & WA & AC & 排列组合 + 补集 & 学会考虑补集，考虑补集会比较方便\\
+		
+		\hline
+		2017.9.28 & \href {https://www.luogu.org/problem/show?pid=1351#sub}{联合权值}
+		 & noip2014 & WA & AC & dfs & 一定要注意好细节，考虑清楚细节\\
+		
+		\hline
+		2017.9.28 & \href {https://www.luogu.org/problem/show?pid=1038#sub}{神经网络}
+		 & noip2003 & AC & AC & 模拟 & 无\\
+		
+		\hline
+		2017.9.28 & \href {https://www.luogu.org/problem/show?pid=1514#sub}{引水入城}
+		 & noip2010 & RE & AC & DP + 观察 & 注意网格图的总边数是n*m*2，stl在$2*10^5$的时候最好不要用\\
+		
+		\hline
+		2017.9.28 & \href {https://www.luogu.org/problem/show?pid=1549}{棋盘问题2}
+		 & noip1997 & AC & AC & 搜索 & 无\\
+		
+		\hline
+		2017.9.28 & \href {https://www.luogu.org/problem/show?pid=1314#sub}{聪明的质监员}
+		 & noip2011 & AC & AC & 二分 + 前缀和 & 无\\
+		
+		\hline
+		2017.9.28 & \href {https://www.luogu.org/problem/show?pid=2831#sub}{愤怒的小鸟}
+		 & noip2016 & AC & AC & 状压DP & 无\\
+		
+		\hline
+		2017.9.28 & \href {https://www.luogu.org/problem/show?pid=1155#sub}{双栈排序}
+		 & noip2008 & WA & AC & 二分图 & 对于与“2”有关的考虑二分图，证明一个命题是否正确可以通过证明其逆否命题的正确性\\
+		
+		\hline
+		2017.9.29 & number
+		 & 考试 & 100 & AC & 逆向考虑 & 学会逆向考虑\\
+		
+		\hline
+		2017.9.29 & game
+		 & 考试 & 90 & AC & 二维偏序 & 有时候多维偏序可以降一维，注意发掘其性质\\
+		
+		\hline
+		2017.9.29 & fence
+		 & 考试 & 20 & AC & 搜索 + 剪枝 & 注意当前的羊可放入的集合是已经产生的集合中的任意一个而不只是最新的集合\\
+		
+		\hline
+		2017.9.29 & \href {https://www.luogu.org/problem/show?pid=1099#sub}{树网的核} ~~~~~~ \href {http://www.lydsy.com/JudgeOnline/problem.php?id=1999}{树网的核}$O(n)$
+		 & noip2007 & RE & AC & 挖掘性质 + 单调队列 & 对于性质学会先猜再证明，记住求直径的方法及其证明，注意单调队列判断队列是否为空的条件\\
+
+		\hline
+		2017.9.29 & \href {https://www.luogu.org/problem/show?pid=1034#sub}{矩形覆盖}
+		 & noip2002 & WA & AC & 搜索 + 最优性剪枝 & 注意题目里面的条件\\
+		
+		\hline
+		2017.9.29 & \href {https://www.luogu.org/problem/show?pid=1073#sub}{最优贸易}
+		 & noip2009 & WA & AC & tarjan + DP & 注意不连通的情况\\
+		
+		\hline
+		2017.10.2 & \href {https://www.luogu.org/problem/show?pid=1080#sub}{国王游戏}
+		 & noip2012 & WA & AC & 贪心 + 高精度 & 学会考虑两个点之间的贡献情况，以及考虑是否交换这两个点的两种情况的结果对答案的影响\\
+		
+		\hline
+		2017.10.2 & \href {https://www.luogu.org/problem/show?pid=1315#sub}{观光公交}
+		 & noip2011 & WA & AC & 贪心 & 贪心要想深一点，注意好细节\\
+		
+		\hline
+		2017.10.3 & clique
+		 & 考试 & 60 & AC & LIS & 不要被题目的表面所影响，放宽思路\\
+		
+		\hline
+		2017.10.3 & mod
+		 & 考试 & 100 & AC & 线段树 & 无\\
+		
+		\hline
+		2017.10.3 & number
+		 & 考试 & 0 & AC & 数位DP & 学会打表分析性质，不要嫌表麻烦\\
+		
+		\hline
+		2017.10.3 & \href {https://www.luogu.org/problem/show?pid=1065#sub}{作业调度方案}
+		 & noip2006 & WA & AC & 模拟 & 一定要理解清楚题意\\
+		
+		\hline
+		2017.10.4 & mine
+		 & 考试 & 100 & AC & DP & 无\\
+		
+		\hline
+		2017.10.4 & water
+		 & 考试 & 0 & AC & 模拟 & 一定要想到方便的方法\\
+		
+		\hline
+		2017.10.4 & gcd
+		 & 考试 & 20 & AC & 容斥 & 有些与gcd相关的可以用莫比乌斯反演得到结论（比如不会容斥的时候用这个来代替）\\
+		
+		\hline
+		2017.10.5 & \href {https://www.luogu.org/problem/show?pid=1053#sub}{篝火晚会}
+		 & noip2005 & WA & AC & 思维 & 无\\
+		
+		\hline
+		2017.10.5 & \href {https://www.luogu.org/problem/show?pid=1039#sub}{侦探推理}
+		 & noip2003 & WA & AC & 模拟 & 无\\
+		
+		\hline
+		2017.10.5 & \href {https://www.luogu.org/problem/show?pid=1033#sub}{自由落体}
+		 & noip2002 & WA & AC & 模拟 & 注意小车是有长度的，做题要注意好细节\\
+		
+		\hline
+		2017.10.6 & \href {https://www.luogu.org/problem/show?pid=2679#sub}{子串}
+		 & noip2015 & AC & AC & DP & 注意好特殊情况\\
+		
+		\hline
+		2017.10.6 & string
+		 & 考试 & 60 & AC & 线段树 & 注意常数因子\\
+		
+		\hline
+		2017.10.6 & matrix
+		 & 考试 & 0 & AC & DP & 学会寻找合适的DP状态\\
+		
+		\hline
+		2017.10.6 & big
+		 & 考试 & 40 & AC & trie树 + 思维 & 学会利用位运算的运算法则改变计算的顺序，学会利用trie树\\
+		
+		\hline
+		2017.10.6 & \href {https://www.luogu.org/problem/show?pid=2668}{斗地主}
+		 & noip2015 & WA & AC & 搜索 & 注意细节\\
+		
+		\hline
+		2017.10.7 & mayuri
+		 & 考试 & 0 & AC & 递推 + 优化 & 对于存在迭代或递归性质的东西学会追本溯源，从源头开始回推\\
+		
+		\hline
+		2017.10.7 & kurisu
+		 & 考试 & 100 & AC & BIT & 推式子是很重要的\\
+		
+		\hline
+		2017.10.7 & okarin
+		 & 考试 & 30 & AC & DP & 有些题目可能是DP，一定要开拓思维，不要因为类似而限制了思维\\
+		
+		\hline
+		2017.10.9 & matrix
+		 & 考试 & 100 & AC & 枚举 & 无\\
+		
+		\hline
+		2017.10.9 & present
+		 & 考试 & 30 & AC & 模型构建 + 最短路 + 思维 & summary\\
+		
+		\hline
+		2017.10.9 & mahjong
+		 & 考试 & 0 & AC & 模拟 & 代码能力在这种题目上的重要性尤为突出，所以平常一定要限制自己在一道题上花的时间才是\\
+		
+		\hline
+		2017.10.9 & \href {https://www.luogu.org/problem/show?pid=1312#sub}{mayan游戏}
+		 & noip2011 & WA & AC & 搜索 + 剪枝 & 学会剪枝（想尽办法），注意细节\\
+		
+		\hline
+		2017.10.10 & adore
+		 & 考试 & 0 & AC & 状压DP & 一定要有状压的思想，面对小数据的时候一定要注意能否状压，不要因为给定了图而不考虑DP\\
+		
+		\hline
+		2017.10.10 & confess
+		 & 考试 & 80 & AC & 暴力枚举 & 实际上是随机化...\\
+		
+		\hline
+		2017.10.10 & repulsed
+		 & 考试 & 20 & AC & 贪心 + 维护 & 学会用一些数组变量来维护贪心的值\\
+		
+		\hline
+		2017.10.10 & \href {https://www.luogu.org/problem/show?pid=1066}{$2^k$进制数}
+		 & noip2006 & AC & AC & DP + 高精度 & 考虑好常数一般可以卡过去\\
+		
+		\hline
+		2017.10.10 & \href {https://www.luogu.org/problem/show?pid=1054#sub}{等价表达式}
+		 & noip2005 & WA & AC & 求中缀表达式，代值 & 一定要学会怎么求中缀表达式\\
+		
+		\hline
+		2017.10.10 & \href {https://www.luogu.org/problem/show?pid=1032}{字串变化}
+		 & noip2002 & WA & AC & 搜索 & 不要因为难处理而不去用广搜写，应该用广搜的就应该用广搜\\
+		
+		\hline
+		2017.10.10 & \href {https://www.luogu.org/problem/show?pid=1013}{进制位}
+		 & noip1998 & WA & AC & 搜索 & 无\\
+		
+		\hline
+		2017.10.10 & \href {http://codeforces.com/problemset/problem/869/A}{The Artful Expedient}
+		 & CF869A & RE & AC & 枚举 & 一定不要出小错误\\
+		
+		\hline
+		2017.10.10 & \href {http://codeforces.com/problemset/problem/869/B}{The Eternal Immortality}
+		 & CF869B div2 & AC & AC & 条件 & 无\\
+		
+		\hline
+		2017.10.10 & \href {http://codeforces.com/problemset/problem/869/C}{The Intriguing Obsession}
+		 & CF869C & AC & AC & 数学 & 学会分析题目\\
+		
+		\hline
+		2017.10.11 & \href {http://codeforces.com/problemset/problem/869/E}{The Untended Antiquity}
+		 & CF869E & WA & AC & 二维树状数组 & summary\\
+		
+		\hline
+		2017.10.11 & \href {http://codeforces.com/problemset/problem/869/D}{The Overdosing Ubiquity}
+		 & CF869D & TLE & AC & 缩点 & 有时候用一些方法把数据范围缩小（比如点数边数）之后就可以暴力了，所以要学会去掉冗余信息\\
+		
+		\hline
+		2017.10.11 & \href {http://codeforces.com/problemset/problem/873/A}{Chores}
+		 & CF873A & AC & AC & 模拟 & 无\\
+		
+		\hline
+		2017.10.11 & \href {http://codeforces.com/problemset/problem/873/B}{Balanced Substring}
+		 & CF873B & AC & AC & 列式 & 学会列式并变形\\
+		
+		\hline
+		2017.10.11 & \href {http://codeforces.com/problemset/problem/873/C}{Strange Game On Matrix}
+		 & CF873C & AC & AC & 模拟 & 无\\
+		
+		\hline
+		2017.10.11 & \href {http://codeforces.com/problemset/problem/873/D}{Merge Sort}
+		 & CF873D & WA & AC & 模拟 & 注意细节\\
+		
+		\hline
+		2017.10.11 & \href {http://codeforces.com/problemset/problem/868/D}{Huge Strings}
+		 & CF868d & AC & AC & 结论 + 枚举 & summary\\
+		
+		\hline
+		2017.10.12 & starway
+		 & 考试 & 0 & 100 & 最小生成树 & summary\\
+		
+		\hline
+		2017.10.12 & knows
+		 & 考试 & 20 & AC & 线段树维护DP & 权值最小的极长上升子序列，考虑用线段树维护一段区间的合法的DP值中的最小值，合并信息的时候考虑再一次递归(多一个log)\\
+		
+		\hline
+		2017.10.12 & lost
+		 & 考试 & 50 & AC & 维护凸包 & summary\\
+		
+		\hline
+		2017.10.12 & \href {http://codeforces.com/problemset/problem/867/A}{Between the Offices}
+		 & CF867A & AC & AC & 模拟 & 无\\
+		
+		\hline
+		2017.10.15 & \href {http://codeforces.com/problemset/problem/865/A}{Save the problem!}
+		 & CF865A & WA & AC & 构造 & 不要因为是构造题目就不去想方便的构造方法\\
+		
+		\hline
+		2017.10.15 & \href {http://codeforces.com/problemset/problem/865/B}{Ordering Pizza}
+		 & CF865B & WA & AC & 贪心 & 考虑清楚\\
+		
+		\hline
+		2017.10.16 & work
+		 & 考试 & 0 & AC & 模拟 & 无\\
+		
+		\hline
+		2017.10.16 & graph
+		 & 考试 & 0 & AC & 快速幂 & 快速幂思想。注意有些结构运算的意义。比如此题中如果用邻接矩阵表示图的话，矩阵的x次方即表示走过x条边的最短路\\
+		
+		\hline
+		2017.10.16 & sequence
+		 & 考试 & 0 & AC & 考虑单点贡献 & 考虑以某点为左端点向右至少到哪个位置才能满足第k大的数大于等于m\\
+		
+		\hline
+		2017.10.16 & \href {http://codeforces.com/problemset/problem/870/E}{Points, Lines and Ready-made Titles}
+		 & CF870E & WA & AC & 结论 & 考虑计数问题的时候可以从别的计数方向出发\\
+		
+		\hline
+		2017.10.16 & \href {http://codeforces.com/contest/870/problem/D}{Something with XOR Queries}
+		 & CF870D & AC & AC & 构造 & 交互题。这种可以的得到两个之间的关系的问题，可以从一些数与同一个数的关系出发\\
+		
+		\hline
+		2017.10.16 & \href {http://codeforces.com/problemset/problem/876/A}{Trip For Meal}
+		 & CF876A & AC & AC & 模拟 & 无\\
+		
+		\hline
+		2017.10.16 & \href {http://codeforces.com/problemset/problem/876/B}{Divisiblity of Differences}
+		 & CF876B & AC & AC & 数学 & 余数相同的在一组\\
+		
+		\hline
+		2017.10.16 & \href {http://codeforces.com/problemset/problem/875/A}{Classroom Watch}
+		 & CF875A & AC & AC & 枚举 & 枚举最后100个（要判负数）\\
+		
+		\hline
+		2017.10.16 & \href {http://codeforces.com/problemset/problem/875/B}{Sorting the Coins}
+		 & CF875B & AC & AC & 简单题 & 无\\
+		
+		\hline
+		2017.10.16 & \href {http://codeforces.com/problemset/problem/875/C}{National Property}
+		 & CF875C & AC & AC & 性质题 & 找影响前后两个word的字母即可\\
+		
+		\hline
+		2017.10.17 & slope
+		 & 考试 & 100 & AC & 性质题 & 只要取所有相邻两个点的斜率的最大值。相邻是指横坐标相邻，用反证法证明\\
+		
+		\hline
+		2017.10.17 & path
+		 & 考试 & 50 & AC & Floyd & summary\\
+		
+		\hline
+		2017.10.17 & segment
+		 & 考试 & 0 & AC & 期望 & summary\\
+		
+		\hline
+		2017.10.17 & \href {http://codeforces.com/problemset/problem/875/D}{High Cry}
+		 & CF875D & WA & AC & 思维 & 考虑单点是在哪个范围内的最大值，以及在哪个范围的区间或值等于自己。都可以用单调栈解决\\
+		
+		\hline
+		2017.10.17 & \href {http://codeforces.com/problemset/problem/875/E}{Delivery Club}
+		 & CF875E & AC & AC & 二分 & 二分答案，用set维护允许走到的点的位置，用下一个要走到的位置将不合法的位置删除，一直判断点集是否为空即可\\
+		
+		\hline
+		2017.10.18 & sum
+		 & 考试 & 100 & AC & 思维 & 直接利用上一次区间的答案即可得到这一次区间的答案\\
+		
+		\hline
+		2017.10.18 & road
+		 & 考试 & 100 & AC & 水题 & 直接算每个点对答案的贡献即可，考虑贡献的时候考虑哪些边在它的贡献上\\
+		
+		\hline
+		2017.10.18 & shopping
+		 & 考试 & 100 & AC & 平衡树 & 直接用平衡树，按w为第一关键字，p为第二关键字，往w较大的区间里面看是否存在p小于k的，否走往较小的区间走。一直取出满足条件的w，知道k被消耗完或无法被消耗\\
+		
+		\hline
+		2017.10.18 & \href {http://codeforces.com/problemset/problem/873/E}{Awards For Contestants}
+		 & CF873E & WA & AC & 排序 & 注意所学的结构与题目要求之间的关系\\
+		
+		\hline
+		2017.10.18 & \href {http://codeforces.com/problemset/problem/875/F}{Royal Questions}
+		 & CF875F & AC & AC & 贪心 + 并查集 & summary\\
+		
+		\hline
+		2017.10.18 & \href {http://codeforces.com/problemset/problem/864/A}{Fair Game}
+		 & CF864A & AC & AC & 模拟 & 无\\
+		
+		\hline
+		2017.10.18 & \href {http://codeforces.com/problemset/problem/864/B}{Polycarp and Letters}
+		 & CF864B & AC & AC & 模拟 & 无\\
+		
+		\hline
+		2017.10.18 & \href {http://codeforces.com/problemset/problem/864/C}{Bus}
+		 & CF864C & WA & AC & 模拟 & 注意细节\\
+		
+		\hline
+		2017.10.18 & \href {http://codeforces.com/problemset/problem/864/D}{Make a Permutation!}
+		 & CF864D & WA & AC & 模拟 & 注意细节\\
+		
+		\hline
+		2017.10.19 & \href {http://codeforces.com/problemset/problem/864/E}{Fire}
+		 & CF864E & WA & AC & 排序 + DP & summary\\
+		
+		\hline
+		2017.10.19 & \href {http://codeforces.com/problemset/problem/864/F}{Cities Excursions}
+		 & CF864F & WA & AC & 倍增 & summary\\
+		
+		\hline
+		2017.10.19 & \href {http://codeforces.com/problemset/problem/865/C}{Gotta Go Fast}
+		 & CF865C & WA & AC & 二分 + 期望DP & 对于这种存在选择性的题目可以考虑二分。\\
+		
+		\hline
+		2017.10.19 & \href {http://codeforces.com/problemset/problem/865/D}{Buy Low Sell High}
+		 & CF865D & WA & AC & 堆 + 思维 & summary\\
+		
+		\hline
+		2017.10.19 & share-1003
+		 & 叶则杨 & × & × & 线段树 + 矩阵 & summary\\
+		
+		\hline
+		2017.10.19 & share-1004
+		 & 胡旭林 & × & × & 结论题 & summary\\
+		
+		\hline
+		2017.10.19 & share-1005
+		 & 彭力 & × & × & 思维 & summary\\
+		
+		\hline
+		2017.10.19 & share-1006
+		 & 杨曜嘉 & × & × & 结论题 & summary\\
+		
+		\hline
+		2017.10.19 & share-1007
+		 & 彭贻豪 & × & × & 思维 & summary\\
+		
+		\hline
+		2017.10.20 & conjugate
+		 & 考试 & 40 & AC & 期望 & 单独考虑每个堆与第一个堆之间的影响关系\\
+		
+		\hline
+		2017.10.20 & conjunct
+		 & 考试 & 0 & AC & DP & 发现求初始序列与某一种最终序列的最长公共子序列(lcs)，用DP考虑0，1，2之间的关系求解\\
+		
+		\hline
+		2017.10.20 & conjecture
+		 & 考试 & 0 & & & \\
+		
+		\hline
+		2017.10.21 & graph
+		 & 考试 & 0 & AC & 构造 & 有时候图不好处理可以用dfs树来替代\\
+		
+		\hline
+		2017.10.21 & permutation
+		 & 考试 & 50 & AC & 思维 & summary\\
+		
+		\hline
+		2017.10.21 & tree
+		 & 考试 & 100 & AC & 结论题 & summary\\
+		
+		\hline
+		2017.10.24 & \href {https://www.luogu.org/problemnew/show/2176#sub}{[USACO14FEB]路障Roadblock}
+		 & USACO & AC & AC & 最短路 + 枚举 & 无\\
+		
+		\hline
+		2017.10.24 & \href {https://www.luogu.org/problemnew/show/2009#sub}{跑步}
+		 & 洛谷 & AC & AC & 最短路 & 无\\
+		
+		\hline
+		2017.10.24 & \href {https://www.luogu.org/problemnew/show/2527#sub}{Panda的烦恼}
+		 & SHOI2001 & WA & AC & 思维 & 问题不要想的太简单太浅 \\
+		
+		\hline
+		2017.10.24 & \href {https://www.luogu.org/problemnew/show/1637#sub}{三元上升子序列}
+		 & 洛谷 & WA & AC & BIT & 无\\
+		
+		\hline
+		2017.10.24 & 基数排序
+		 & 模板 & × & × & 基数排序 & 无\\
+		
+		\hline
+		2017.10.24 & 左偏堆
+		 & 模板 & × & × & 左偏堆 & 无\\
+		
+		\hline
+		2017.10.25 & kth
+		 & 考试 & 100 & AC & 二分答案 & 无\\
+		
+		\hline
+		2017.10.25 & sequence
+		 & 考试 & 100 & AC & 单调栈 & 无\\
+		
+		\hline
+		2017.10.25 & rest
+		 & 考试 & 80 & AC & 排序 + 并查集 & 算法复杂度比较高的尽量不适用(除非想不到更好的算法)\\
+		
+		\hline
+		2017.10.25 & \href {https://www.luogu.org/problemnew/show/2674#sub}{《瞿葩的数字游戏》T2-多边形数}
+		 & 洛谷 & AC & AC & 规律 & 无\\
+		
+		\hline
+		2017.10.25 & \href {https://www.luogu.org/problemnew/show/2149#sub}{Elaxia的路线}
+		 & SDOI2009 & AC & AC & 最短路 & 学会从路径上思考\\
+		
+		\hline
+		2017.10.25 & \href {https://www.luogu.org/problemnew/show/1646#sub}{矩形}
+		 & 洛谷 & AC & AC & 枚举 & 枚举求出以每个点为左上角时有多少个点可以作为右下角的点\\
+		
+		\hline
+		2017.10.25 & \href {https://www.luogu.org/problem/show?pid=1559}{运动员最佳匹配问题}
+		 & 洛谷 & AC & AC & 费用流 & 无\\
+		
+		\hline
+		2017.10.25 & \href {https://www.luogu.org/problemnew/show/1762#sub}{偶数}
+		 & 洛谷 & AC & AC & 规律 & 无\\
+		
+		\hline
+		2017.10.26 & permutation
+		 & 考试 & 100 & AC & 思维 & summary\\
+		
+		\hline
+		2017.10.26 & segment
+		 & 考试 & 100 & AC & 思维 & summary\\
+		
+		\hline
+		2017.10.26 & game
+		 & 考试 & 20 & AC & 性质 & summary\\
+		
+		\hline
+		2017.10.27 & \href {http://codeforces.com/problemset/problem/877/B}{Nikita and string}
+		 & codeforces & WA & AC & 枚举 & 注意特殊情况\\
+		
+		\hline
+		2017.10.28 & \href {http://codeforces.com/problemset/problem/877/E}{Danil and a Part-time Job}
+		 & codeforces & AC & AC & 线段树 & 无\\
+		
+		\hline
+		2017.10.28 & copycat
+		 & 考试 & 100 & AC & 模拟 & 无\\
+		
+		\hline
+		2017.10.28 & running
+		 & 考试 & 20 & AC & 最小生成树 + 最短路 & 注意$S$和$T$在同一个连通块时就已经得到了最高温度\\
+		
+		\hline
+		2017.10.28 & toyuq
+		 & 考试 & 10 & AC & 树型DP & summary\\
+		
+		\hline
+		2017.10.29 & alpusb
+		 & 考试 & 100 & AC & 模拟 & 无\\
+		
+		\hline
+		2017.10.29 & cellphone
+		 & 考试 & 60 & AC & set & 用set维护区间，如果一个区间插在另一个区间里面就拆开大的区间\\
+		
+		\hline
+		2017.10.29 & quantum
+		 & 考试 & 0 & AC & 字典树 + 并查集 & 要考虑用字典树\\
+		
+		\hline
+		2017.10.30 & meaningless
+		 & 考试 & 100 & AC & 进制 & 考虑每一位即可\\
+		
+		\hline
+		2017.10.30 & quondam
+		 & 考试 & 50 & AC & 组合 / 数位DP & 注意和式的形式，学会用一个函数描述一种参数形式，当递归出现相同函数形式时可以考虑递归求解\\
+		
+		\hline
+		2017.10.30 & refrigerator
+		 & 考试 & 0 & AC & DP & 学会从枚举上考虑\\
+		
+		\hline
+		2017.10.31 & segment
+		 & 考试 & 100 & AC & 线段树 / 差分堆 & 注意如果给线段树的端点离散化，左端点减一也要离散化\\
+		
+		\hline
+		2017.10.31 & hotel
+		 & 考试 & 30 & AC & 线段树 & 维护一种值不方便时可以维护另一种相似的值\\
+		
+		\hline
+		2017.10.31 & recursion
+		 & 考试 & 60 & AC & 数学 & 学会用差分\\
+		
+		\hline
+		2017.10. & \href {}{}
+		 & & & & & \\
+		
+		\hline
+		2017.10. & \href {}{}
+		 & & & & & \\
+		
+		\hline
+		2017.10. & \href {}{}
+		 & & & & & \\
+		
+		\hline
+		
+	\end{longtable}
+	
+\end{document}
