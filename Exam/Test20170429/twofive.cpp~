@@ -1,0 +1,62 @@
+#include<cstdio>
+#include<cstdlib>
+#include<algorithm>
+using namespace std;
+
+int Res,n;
+bool Vis[26];
+char Type;
+char Mp[6][6],A[6][6];
+
+bool Check(){
+	for( int i=1;i<=5;i++ )
+		for( int j=1;j<=5;j++ )
+			if( A[i][j]!=Mp[i][j] )
+				return false;
+	return true;
+}
+
+void Dfs( int x,int y ){
+	if( x==6 ){
+		Res++;
+		if( Type=='N'&&Res==n ){
+			for( int i=1;i<=5;i++ )for( int j=1;j<=5;j++ )putchar( A[i][j] );
+			exit(0);
+		}
+		if( Type=='W'&&Check() ){
+			printf("%d\n",Res);
+			exit(0);
+		}
+		return;
+	}
+	if( y==6 ){Dfs( x+1,1 );return;}
+	if( A[x][y]>='A'&&A[x][y]<='Z' ){Dfs( x,y+1 );return;}
+	for( char i=max( A[x-1][y],A[x][y-1] )+1;i<='X';i++ ){
+		if( Vis[i-'A'] )continue;
+		Vis[i-'A'] = true;
+		A[x][y] = i;
+		Dfs( x,y+1 );
+		Vis[i-'A'] = false;
+	}
+	A[x][y] = '0';
+}
+
+int main(){
+	/*
+	freopen("twofive.in","r",stdin);
+	freopen("twofive.out","w",stdout);*/
+	A[1][1] = 'A';A[5][5] = 'Y';
+	Vis['A'-'A'] = Vis['Y'-'A'] = true;
+	Type = getchar();
+	while( Type>'Z'||Type<'A' )Type = getchar();
+	if( Type=='W' ){
+		for( int i=1;i<=5;i++ )
+			for( int j=1;j<=5;j++ ){
+				Mp[i][j] = getchar();
+				while( Mp[i][j]>'Z'||Mp[i][j]<'A' )Mp[i][j] = getchar();
+			}
+	}
+	else scanf("%d",&n);
+	Dfs( 1,1 );
+	return 0;
+}

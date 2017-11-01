@@ -1,0 +1,57 @@
+#include<cstdio>
+#include<algorithm>
+using namespace std;
+
+template< typename Type >inline void Read( Type &In ){
+	In=0;char ch=getchar();
+	for( ;ch> '9'||ch< '0';ch=getchar() );
+	for( ;ch>='0'&&ch<='9';ch=getchar() )In = In*10 + ch-'0';
+}
+
+static const int MAXN = 1e6 +1;
+typedef long long LL;
+
+int n,Res,A,B,C;LL Ans;
+int Nt[MAXN<<1],H[MAXN],To[MAXN<<1],Dis[MAXN<<1],Ct;
+
+void Ins( int F,int T,int D ){
+	Nt[++Ct] = H[F];
+	H[F] = Ct;
+	To[Ct] = T;
+	Dis[Ct] = D;
+}
+
+int Size[MAXN],Fa[MAXN];
+void Dfs( int p ){
+	Size[p] = 1;
+	for( int i=H[p];i;i=Nt[i] ){
+		if( Fa[p]==To[i] )continue;
+		Fa[To[i]] = p;
+		Dfs( To[i] );
+		Size[p] += Size[To[i]];
+	}
+}
+LL Get( int p ){
+	LL Res = 0;
+	for( int i=H[p];i;i=Nt[i] ){
+		if( Fa[p]==To[i] )continue;
+		Res += abs( n-2*Size[To[i]] )*Dis[i];
+		Res += Get( To[i] );
+	}
+	return Res;
+}
+
+int main(){
+	
+	freopen("road.in","r",stdin);
+	freopen("road.out","w",stdout);
+	Read( n );
+	for( int i=1;i< n;i++ ){
+		Read( A );Read( B );Read( C );
+		Ins( A,B,C );
+		Ins( B,A,C );
+	}
+	Dfs( 1 );
+	printf("%lld\n",Get( 1 ));
+	return 0;
+}

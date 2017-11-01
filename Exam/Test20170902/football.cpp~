@@ -1,0 +1,113 @@
+#include<cstdio>
+#include<algorithm>
+
+using namespace std ;
+
+#define For( i , _begin , _end ) \
+for( int i = (_begin) , i##end = (_end) ; i <= (i##end) ; i++ )
+#define Lop( i , _begin , _end ) \
+for( int i = (_begin) , i##end = (_end) ; i >= (i##end) ; i-- )
+#define Rep( i , _begin , _add ) \
+for( int i = (_begin) ; i ; i = (_add) )
+
+template< typename type >inline void scanf( type &in ){
+	in = 0 ; char ch = getchar() ; type f = 1 ;
+	for( ; ch> '9'||ch< '0';ch = getchar() )if( ch == '-' ) f = -1 ;
+	for( ; ch>='0'&&ch<='9';ch = getchar() )in = in * 10 + ch - '0' ; in *= f ;
+}
+
+static const int maxn = 50 + 10 ;
+
+int n;
+
+int P[maxn] ;
+int times[maxn] ;
+
+void read_in(){
+	scanf( n ) ;
+	For( i , 1 , n )
+		scanf( P[i] ) ;
+}
+
+void debug(){
+	For( i , 1 , n )
+		printf("%2d " , P[i] ) ;
+	putchar( 10 ) ;
+	For( i , 1 , n )
+		printf("%2d " , times[i] ) ;
+	putchar( 10 ) ;
+}
+
+void run(){
+	sort( 1 + P , 1 + n + P ) ;
+	int usable = n << 2 , top = 0 , ntop = 0 ;
+	For( i , 1 , n )times[i] = 4 ;
+	Lop( i , n , 1 )
+		if( P[i] <= P[1] + 12 )
+			{ top = i ; break ; }
+	Lop( i , top , 1 ){
+		int t = min( P[1] + 12 - P[i] , times[i] ) ;
+		P[i] += t , times[i] -= t ,
+		P[i - 1] += t , times[i - 1] -= t ;
+		usable -= 8 + times[i] + times[i - 1];
+		if( usable < 0 ){
+			P[i] -= t , times[i] += t ,
+			P[i - 1] -= t , times[i - 1] += t ;
+			ntop = i ;
+			break ;
+		}
+		--i ;
+	}
+	
+	//debug() ;
+	
+	int pos = ntop + 1 ;
+	For( i , 1 , ntop ){
+		int t = min( ( P[1] + 12 - P[i] ) / 3 , times[i] ) ;
+		P[i] += t * 3 , times[i] -= t ;
+		while( t >= times[pos] && pos <= top )
+			t -= times[pos] , times[pos] = 0 , ++pos ;
+		P[i] -= t * 3 , times[i] += t ;
+		if( pos > top )break ;
+	}
+	
+	int sum = ( n - top ) << 2 ;
+	
+	For( i , pos , top )
+		if( sum > times[i] )sum -= times[i] , times[i] = 0 ;
+		else { times[i] -= sum , sum = 0 ; break ; }
+	
+	while( !times[pos] && pos <= top )pos++ ;
+	
+	For( i , 1 , ntop ){
+		P[i] += 3 * times[i] ;
+		while( pos <= top )
+			if( times[i] > times[pos] )
+				times[i] -= times[pos] , times[pos] = 0 ;
+			else
+				{ times[pos] -= times[i] , times[i] = 0 ; break ; }
+		P[i] -= 3 * times[i] ;
+		if( pos > top )break ;
+	}
+	
+	//debug() ;
+	
+	int rank = 1 ;
+	
+	For( i , 1 , n )if( P[i] > P[1] )++rank ;
+	
+	printf("%d\n" , rank ) ;
+	
+}
+
+int main(){
+	
+	freopen("football.in" , "r" , stdin) ;
+	freopen("football.out" , "w" , stdout) ;
+	
+	read_in() ;
+	
+	run() ;
+	
+	return 0 ;
+}

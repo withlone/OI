@@ -1,0 +1,54 @@
+#include<cstdio>
+#include<cstring>
+#include<algorithm>
+using namespace std;
+
+#define For( i , _Begin , _End ) for( int i=_Begin;i<=_End;i++ )
+#define Rep( i , _Begin , _End ) for( int i=_Begin;i>=_End;i-- )
+
+template< typename Type >inline void Read( Type &In ){
+	In=0;char ch=getchar();Type f = 1;
+	for( ;ch> '9'||ch< '0';ch=getchar() );
+	for( ;ch>='0'&&ch<='9';ch=getchar() )In = In*10 + ch-'0';In *= f;
+}
+
+typedef pair< int , int > Pair;
+static const int MAXN = 1e5 +1;
+static const int MAXM = 1e2 +1;
+
+int n , q , m;
+int t[MAXN] , v[MAXN] , f[MAXN];
+int Sz[MAXM][MAXM];
+int Que[MAXN] , F[MAXN];int H , T;
+
+namespace TLE{
+	int g[MAXN];
+	void TLE(){
+		For( i , 1 , n )
+			Rep( j , MAXN-1 , t[i] )
+				g[j] = max( g[j] , g[j-t[i]] + v[i] );
+		while( q-- ){
+			Read( m );
+			printf("%d\n",g[m]);
+		}
+	}
+}
+
+//#define Judge
+
+int main(){
+	
+	#ifdef Judge
+		freopen("medic.in","r",stdin);
+		freopen("medic.out","w",stdout);
+	#endif
+	
+	Read( n );Read( q );
+	For( i , 1 , n ){
+		Read( t[i] ) ; Read( v[i] );
+		Sz[t[i]][v[i]]++;
+	}
+	
+	TLE::TLE();
+	return 0;
+}

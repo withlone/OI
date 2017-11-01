@@ -1,0 +1,41 @@
+#include<cstdio>
+
+#define For( i , _Begin , _End ) for( int i=_Begin;i<=_End;i++ )
+
+template< typename Type >inline void Read( Type &In ){
+	In=0;char ch=getchar();
+	for( ;ch> '9'||ch< '0';ch=getchar() );
+	for( ;ch>='0'&&ch<='9';ch=getchar() )In = In*10 + ch-'0';
+}
+
+typedef long long LL;
+static const int MAXN = 101;
+
+int n,m;
+LL f[MAXN][MAXN];
+
+namespace Work{
+	LL Dp(){
+		For( i , 1 , m )f[1][i] = i , f[2][i] = i*(i-1);
+		For( i , 3 , n )
+			For( j , 2 , m )
+				f[i][j] = f[i-1][j] * (j-1) + ( i&1?-1:1 )*j*(j-1);
+		return f[n][m];
+	}
+}
+
+#define Judge
+
+int main(){
+	
+	#ifdef Judge
+		freopen("lights.in","r",stdin);
+		freopen("lights.out","w",stdout);
+	#endif
+	
+	Read( n );Read( m );
+	
+	printf("%lld\n",Work::Dp());
+	
+	return 0;
+}
