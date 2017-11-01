@@ -1,0 +1,14 @@
+
+
+```cpp
+
+finish_all( noip( 2000 ) ) ;
+for( int i = 2002 ; i <= 2016 ; ++i )
+	finish_all( noip( i ) ) ;
+
+printf( "the data of noip( 2001 ) is not complete!\n" ) ;
+for( int i = 1 ; i <= 1999 ; ++i )
+	printf( "the data of noip( %d ) is not complete!\n" , i ) ;
+
+
+```
